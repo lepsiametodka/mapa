@@ -553,5 +553,189 @@
 		"floor": "1",
 		"side": "T"
 	},
+	"j.200": {
+		"primary_name": "Kabinet GEG, DEJ, OBN",
+		"number": "200",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.211": {
+		"primary_name": "Kvarta B",
+		"other_names": ["kva b"],
+		"number": "211",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.210": {
+		"primary_name": "Kvinta A",
+		"other_names": ["kvi a"],
+		"number": "210",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.209": {
+		"primary_name": "4.BF",
+		"other_names": ["4bf", "IV.BF"],
+		"number": "209",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.208": {
+		"primary_name": "Kabinet CHE",
+		"number": "208",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.207": {
+		"primary_name": "5.AF",
+		"other_names": ["5af", "V.AF"],
+		"number": "207",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.206": {
+		"primary_name": "5.BF",
+		"other_names": ["5bf", "V.BF"],
+		"number": "206",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.202": {
+		"primary_name": "Učebňa biológie",
+		"other_names": ["bio f", "biológia f"],
+		"number": "202",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.203": {
+		"primary_name": "Kabinet prírodovedné predmety 2",
+		"number": "203",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.204": {
+		"primary_name": "Kabinet BIO F",
+		"number": "204",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.205": {
+		"primary_name": "Kabinet prírodovedné predmety 1",
+		"number": "204",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.201": {
+		"primary_name": "4.AF",
+		"other_names": ["4af", "IV.AF"],
+		"number": "201",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.2wcw": {
+		"primary_name": "WC ženy",
+		"floor": "2",
+		"side": "J"
+	},
+	"j.2wcm": {
+		"primary_name": "WC muži",
+		"floor": "2",
+		"side": "J"
+	},
+	"m.202": {
+		"primary_name": "4.B",
+		"other_names": ["4b", "IV.B"],
+		"number": "202",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.210": {
+		"primary_name": "Učebňa BIO",
+		"other_names": ["bio", "biológia"],
+		"number": "210",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.210k": {
+		"primary_name": "Kabinet BIO",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.209": {
+		"primary_name": "U209",
+		"number": "209",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.208": {
+		"primary_name": "Kabinet BIO",
+		"number": "208",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.207": {
+		"primary_name": "1.B",
+		"other_names": ["1b", "I.B"],
+		"number": "207",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.206": {
+		"primary_name": "Kvinta B",
+		"other_names": ["kvi b"],
+		"number": "206",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.205": {
+		"primary_name": "Oktáva A",
+		"other_names": ["okt a"],
+		"number": "205",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.204": {
+		"primary_name": "Interaktívna tabuľa",
+		"other_names": ["IT M"],
+		"number": "204",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.203": {
+		"primary_name": "jazyková 2",
+		"other_names": ["j2"],
+		"number": "203",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.Kobn": {
+		"primary_name": "Kabinet OBN, SJL",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.Ksjl": {
+		"primary_name": "Kabinet SJL",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.Kgeo": {
+		"primary_name": "Kabinet GEG",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.2wcw": {
+		"primary_name": "WC ženy",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.2wcm": {
+		"primary_name": "WC muži",
+		"floor": "2",
+		"side": "M"
+	},
+	"m.gym": {
+		"primary_name": "Posilňovňa",
+		"floor": "2",
+		"side": "M"
 	}
 }
