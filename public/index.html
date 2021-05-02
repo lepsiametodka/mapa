@@ -32,5 +32,24 @@
 	<script src="assets/labels.js"></script>
 	<script src="assets/floor.js"></script>
 	<script src="assets/main.js"></script>
+
+	<script src="upup.min.js"></script>
+	<script>
+		UpUp.start({
+			'cache-version': 'v1',
+			'content-url': 'index.html',
+			'assets': [
+				'assets/app.css',
+				'assets/d3.min.js',
+				'assets/fuse.min.js',
+				'assets/search.js',
+				'assets/labels.js',
+				'assets/floor.js',
+				'assets/main.js',
+				'data/geometry.json',
+				'data/places.json',
+			],
+		})
+	</script>
 </body>
 </html>
