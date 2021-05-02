@@ -52,7 +52,16 @@ const doSearch = () => {
       prettyLoc += "Nová telocvična (na dvore)"
     }
 
-    document.getElementById("results").innerHTML += '<div class="result" data-id="' + result.id + '"><div class="result-name">' + result.primary_name + '</div><div class="result-location">' + prettyLoc + '</div></div>'
+    if ("other_names" in result) {
+      prettyLoc += "; tiež známe ako: " + result.other_names.join(", ")
+    }
+
+    let name = result.primary_name
+    if ("number" in result) {
+      name += " ("+result.number+")"
+    }
+
+    document.getElementById("results").innerHTML += '<div class="result" data-id="' + result.id + '"><div class="result-name">' + name + '</div><div class="result-location">' + prettyLoc + '</div></div>'
   }
 }
 
