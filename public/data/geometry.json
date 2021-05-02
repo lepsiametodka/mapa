@@ -655,6 +655,49 @@
 					"id": "j.108",
 					"points": [450, 920, 510, 950],
 					"type": "office"
+				},
+				{
+					"id": "j.Ktsv2",
+					"points": [36, 890, 86, 920],
+					"type": "unknown"
+				},
+				{
+					"id": "j.satnam",
+					"points": [36, 800, 86, 890],
+					"type": "unknown"
+				},
+				{
+					"id": "j.satnam_wc",
+					"points": [36, 770, 86, 800],
+					"type": "wcm"
+				},
+				{
+					"id": "j.Ktsv1",
+					"points": [116, 890, 156, 920],
+					"type": "office"
+				},
+				{
+					"id": "j.satnaw",
+					"points": [116, 800, 156, 890],
+					"type": "unknown"
+				},
+				{
+					"id": "j.satnaw_wc",
+					"points": [116, 770, 156, 800],
+					"type": "wcw"
+				},
+				{
+					"id": "tv.tanecne",
+					"points": [640, 320, 700, 450],
+					"type": "gym"
+				},
+				{
+					"id": "tv.byt",
+					"points": [550, 320, 610, 450],
+					"type": "unknown"
+				}
+			]
+		},
 				}
 			]
 		}

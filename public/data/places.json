@@ -215,12 +215,12 @@
 		"side": "T"
 	},
 	"tv.kabinet1": {
-		"primary_name": "Kabninet TSV",
+		"primary_name": "Kabinet TSV",
 		"floor": "0",
 		"side": "T"
 	},
 	"tv.kabinet2": {
-		"primary_name": "Kabninet TSV",
+		"primary_name": "Kabinet TSV",
 		"floor": "0",
 		"side": "T"
 	},
@@ -235,12 +235,12 @@
 		"side": "T"
 	},
 	"tv.wcw": {
-		"primary_name": "WC ženy",
+		"primary_name": "Sprchy ženy",
 		"floor": "0",
 		"side": "T"
 	},
 	"tv.wcm": {
-		"primary_name": "WC muži",
+		"primary_name": "Sprchy muži",
 		"floor": "0",
 		"side": "T"
 	},
@@ -348,12 +348,12 @@
 		"side": "M"
 	},
 	"m.Ktsv1": {
-		"primary_name": "Kabninet TSV, ANJ, GEG",
+		"primary_name": "Kabinet TSV, ANJ, GEG",
 		"floor": "1",
 		"side": "M"
 	},
 	"m.Ktsv2": {
-		"primary_name": "Kabninet TSV",
+		"primary_name": "Kabinet TSV",
 		"floor": "1",
 		"side": "M"
 	},
@@ -522,5 +522,36 @@
 		"primary_name": "WC Muži",
 		"floor": "1",
 		"side": "J"
+	},
+	"j.satnaw_wc": {
+		"primary_name": "Sprchy ženy",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.satnam_wc": {
+		"primary_name": "Sprchy muži",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.satnaw": {
+		"primary_name": "Šatňa ženy",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.satnam": {
+		"primary_name": "Šatňa muži",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.Ktsv1": {
+		"primary_name": "Kabinet TSV",
+		"floor": "1",
+		"side": "J"
+	},
+	"tv.tanecne": {
+		"primary_name": "Tanečné štúdio",
+		"floor": "1",
+		"side": "T"
+	},
 	}
 }
