@@ -66,7 +66,7 @@ d3.json("data/places.json")
 	.then((places) => {
 		PLACES = places
 
-		d3.json("data/geometry2.json")
+		d3.json("data/geometry.json")
 			.then((data) => {
 				DATA = data
 				drawFloorPlan(data.floorplan)
