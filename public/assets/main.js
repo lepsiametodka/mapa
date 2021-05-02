@@ -63,9 +63,14 @@ const fillForType = type => {
 }
 
 const resetZoom = () => {
-	const size = Math.max((width - 200) / DATA.dimensions.width, (height - 200) / DATA.dimensions.height)
+	let size
+	if (width < height) {
+		size = (width - 100) / DATA.dimensions.width
+	} else {
+		size = (height - 200) / DATA.dimensions.height
+	}
+
 	const t = d3.zoomIdentity.translate((width - DATA.dimensions.width * size) / 2, (height - DATA.dimensions.height * size) / 2).scale(size)
-	// const t = d3.zoomIdentity.scale(size)
 	svg.call(zoom.transform, t)
 }
 
