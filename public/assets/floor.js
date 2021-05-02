@@ -87,6 +87,6 @@ const renderRooms = rooms => {
 		.attr("id", d => (d.hasOwnProperty("id") ? d.id.replace(".", "_") : ""))
 		.style("fill", d => fillForType(d.type))
 		.style("stroke", "black")
-		.attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + " " + ((d.points[3] + d.points[1]) / 2))
+		.attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + "px " + ((d.points[3] + d.points[1]) / 2) + "px")
 		.style("stroke-width", "1px")
 }

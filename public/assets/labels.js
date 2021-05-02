@@ -28,7 +28,6 @@ const renderLabelsForRooms = rooms => {
 		.attr("text-anchor", "middle")
 		.attr("dominant-baseline", "middle")
 		.text(d => d.primary)
-		.style("width", "10px")
 		.style("font-family", "Roboto")
 		.style("font-size", d => {
 			const width = Math.max(d.points[3] - d.points[1], d.points[2] - d.points[0])
@@ -36,7 +35,7 @@ const renderLabelsForRooms = rooms => {
 			return (pxPerChar / 6 * 10) + "px"
 		})
 		.attr("transform", d => (d.points[3] - d.points[1] > d.points[2] - d.points[0] ? "rotate(-90)" : ""))
-		.attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + " " + ((d.points[3] + d.points[1]) / 2 + 1))
+		.attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + "px " + ((d.points[3] + d.points[1]) / 2 + 1) + "px")
 
 	g.selectAll('.label_num')
 		.data(labelsToRender)
