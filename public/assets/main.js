@@ -62,18 +62,24 @@ const fillForType = type => {
 	return "white"
 }
 
+const resetZoom = () => {
+	const size = Math.max((width - 200) / DATA.dimensions.width, (height - 200) / DATA.dimensions.height)
+	const t = d3.zoomIdentity.translate((width - DATA.dimensions.width * size) / 2, (height - DATA.dimensions.height * size) / 2).scale(size)
+	// const t = d3.zoomIdentity.scale(size)
+	svg.call(zoom.transform, t)
+}
+
 d3.json("data/places.json")
 	.then((places) => {
 		PLACES = places
+
+		setupFuse()
 
 		d3.json("data/geometry.json")
 			.then((data) => {
 				DATA = data
 				drawFloorPlan(data.floorplan)
-
-				const size = Math.min(data.dimensions.width / (width), data.dimensions.height / (height))
-				const t = d3.zoomIdentity.translate((width - data.dimensions.width * size) / 2, (height - data.dimensions.height * size) / 2).scale(size)
-				svg.call(zoom.transform, t)
+				resetZoom()
 
 				// drawFloor(data.floors['0'])
 				renderFloor(FLOOR_NUMBER)

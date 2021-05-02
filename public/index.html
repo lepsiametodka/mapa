@@ -1,70 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="sk">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mapa Metodky</title>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">
-		* {
-			margin: 0;
-			padding: 0;
-		}
-
-		body {
-			overflow: hidden;
-			font-family: Roboto;
-		}
-
-		.floor-controls {
-			position: fixed;
-			right: 16px;
-			bottom: 16px;
-
-			background: white;
-			padding: 8px;
-			border-radius: 4px;
-
-			display: flex;
-			flex-direction: column;
-
-			border: 1px solid #999;
-		}
-
-		.floor-btn {
-			border: 1px solid black;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 4px;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		.floor-label {
-			font-size: 0.8em;
-			padding: 6px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.floor-number {
-			font-weight: 600;
-			font-size: 1.5em;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-top: -4px;
-			margin-bottom: 4px;
-		}
-	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
-
 	<div id="map"></div>
+
+	<div class="search">
+		<input type="text" id="searchbar" placeholder="Vyhľadávanie" autocomplete="off">
+
+		<div class="search-results" id="results" style="display: none;">
+		</div>
+	</div>
 
 	<div class="floor-controls">
 		<div class="floor-btn" id="floor-up">+</div>
@@ -73,12 +26,11 @@
 		<div class="floor-btn" id="floor-down">-</div>
 	</div>
 
-	<script src="https://d3js.org/d3.v6.min.js"></script>
-
-	<script src="labels.js"></script>
-	<script src="floor.js"></script>
-	<script src="main.js"></script>
-
-	<!-- [360, 0, 360, 1040],	 -->
+	<script src="assets/d3.min.js"></script>
+	<script src="assets/fuse.min.js"></script>
+	<script src="assets/search.js"></script>
+	<script src="assets/labels.js"></script>
+	<script src="assets/floor.js"></script>
+	<script src="assets/main.js"></script>
 </body>
 </html>

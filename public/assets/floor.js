@@ -4,12 +4,12 @@ const renderFloor = (number) => {
 	renderPolygons(floor.polygons)
 	renderLines(floor.lines)
 	renderStairs(floor.stairs)
-	
+
 	renderRooms(floor.rooms)
 	renderLabelsForRooms(floor.rooms)
 
 	document.getElementById("floor-number").innerText = number
-
+	updateLocation()
 }
 
 const renderStairs = (stairs) => {
@@ -87,5 +87,6 @@ const renderRooms = rooms => {
 		.attr("id", d => (d.hasOwnProperty("id") ? d.id.replace(".", "_") : ""))
 		.style("fill", d => fillForType(d.type))
 		.style("stroke", "black")
+		.attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + " " + ((d.points[3] + d.points[1]) / 2))
 		.style("stroke-width", "1px")
 }
