@@ -1,0 +1,662 @@
+{
+	"dimensions": {
+		"width": 720,
+		"height": 1040
+	},
+	"floorplan": [
+		[[0, 0], [720, 120]],
+		[[36, 120], [120, 200]],
+		[[0, 320], [280, 400]],
+		[[36, 720], [120, 200]],
+		[[0, 920], [720, 120]],
+		[[550, 320], [150, 400]]
+	],
+	"floors": {
+		"0": {
+			"polygons": [
+				[[0, 0], [720, 0], [720, 120], [156, 120], [156, 320], [36, 320], [36, 120], [0, 120]],
+				[[0, 920], [36, 920], [36, 520], [156, 520], [156, 920], [720, 920], [720, 1040], [0, 1040]],
+				[[550, 320], [700, 320], [700, 720], [550, 720]]
+			],
+			"lines": [
+				[300, 60, 330, 60],
+				[315, 105, 315, 120],
+				[630, 30, 660, 30],
+				[630, 950, 660, 950],
+				[61, 295, 61, 320],
+				[420, 60, 450, 60],
+				[435, 105, 435, 120],
+				[330, 30, 360, 30],
+				[390, 30, 420, 30],
+				[435, 980, 450, 980],
+				[300, 980, 315, 980],
+				[86, 950, 116, 950],
+				[36, 820, 156, 820],
+				[360, 1010, 420, 1010],
+				[61, 720, 61, 745]
+			],
+			"stairs": [
+				{
+					"points": [600, 0, 630, 30],
+					"divisions": [6, 2]
+				},
+				{
+					"points": [86, 60, 120, 90],
+					"divisions": [2, 6]
+				},
+				{
+					"points": [315, 60, 330, 75],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [300, 75, 315, 105],
+					"divisions": [1, 6]
+				},
+				{
+					"points": [435, 75, 450, 105],
+					"divisions": [1, 6]
+				},
+				{
+					"points": [420, 60, 435, 75],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [61, 270, 86, 295],
+					"divisions": [5, 1]
+				},
+				{
+					"points": [420, 30, 435, 60],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [315, 30, 330, 60],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [600, 920, 630, 950],
+					"divisions": [6, 2]
+				},
+				{
+					"points": [420, 980, 435, 995],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [435, 995, 450, 1025],
+					"divisions": [1, 6]
+				},
+				{
+					"points": [315, 980, 330, 995],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [300, 995, 315, 1025],
+					"divisions": [1, 6]
+				},
+				{
+					"points": [116, 920, 146, 950],
+					"divisions": [6, 2]
+				},
+				{
+					"points": [420, 950, 435, 980],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [315, 950, 330, 980],
+					"divisions": [3, 1]
+				},
+				{
+					"points": [61, 745, 86, 770],
+					"divisions": [5, 1]
+				},
+				{
+					"points": [625, 350, 640, 390],
+					"divisions": [1, 6]
+				}
+			],
+			"rooms": [
+				{
+					"id": "m.05",
+					"points": [0, 0, 86, 90],
+					"type": "class"
+				},
+				{
+					"id": "m.Kche",
+					"points": [0, 90, 86, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.03",
+					"points": [270, 0, 300, 30],
+					"type": "office"
+				},
+				{
+					"id": "m.Kche2",
+					"points": [210, 0, 270, 30],
+					"type": "office"
+				},
+				{
+					"id": "m.vratnica",
+					"points": [300, 0, 330, 30],
+					"type": "office"
+				},
+				{
+					"id": "m.cheprip",
+					"points": [120, 60, 210, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.04",
+					"points": [210, 60, 300, 120],
+					"type": "class"
+				},
+				{
+					"id": "m.kniznica",
+					"points": [450, 60, 540, 120],
+					"type": "services"
+				},
+				{
+					"id": "m.zborovna",
+					"points": [540, 60, 630, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.office",
+					"points": [630, 60, 660, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.ekonomka",
+					"points": [660, 0, 720, 30],
+					"type": "office"
+				},
+				{
+					"id": "m.tajomnicka",
+					"points": [690, 30, 720, 60],
+					"type": "office"
+				},
+				{
+					"id": "m.riaditelka",
+					"points": [660, 60, 720, 120],
+					"type": "office"
+				},
+				{
+					"points": [420, 0, 450, 30],
+					"type": "unknown"
+				},
+				{
+					"points": [450, 0, 480, 30],
+					"type": "unknown"
+				},
+				{
+					"points": [480, 0, 510, 30],
+					"type": "unknown"
+				},
+				{
+					"id": "m.sklad",
+					"points": [120, 120, 156, 210],
+					"type": "services"
+				},
+				{
+					"id": "m.bufet",
+					"points": [120, 210, 156, 270],
+					"type": "services"
+				},
+				{
+					"id": "m.u3",
+					"points": [36, 120, 86, 170],
+					"type": "class"
+				},
+				{
+					"id": "m.u4",
+					"points": [36, 170, 86, 220],
+					"type": "class"
+				},
+				{
+					"id": "m.u5",
+					"points": [36, 220, 86, 270],
+					"type": "class"
+				},
+				{
+					"id": "m.jedalen",
+					"points": [0, 320, 280, 520],
+					"type": "services"
+				},
+				{
+					"id": "j.jedalen",
+					"points": [0, 520, 280, 720],
+					"type": "services"
+				},
+				{
+					"id": "j.psychologicka",
+					"points": [660, 920, 720, 950],
+					"type": "office"
+				},
+				{
+					"id": "j.zastupkyna",
+					"points": [690, 950, 720, 980],
+					"type": "office"
+				},
+				{
+					"id": "j.i4",
+					"points": [660, 980, 720, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.zborovna8",
+					"points": [630, 980, 660, 1040],
+					"type": "office"
+				},
+				{
+					"id": "j.mJ",
+					"points": [540, 980, 630, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.uz0",
+					"points": [450, 980, 540, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.skolnik",
+					"points": [420, 995, 435, 1040],
+					"type": "office"
+				},
+				{
+					"id": "j.vratnica",
+					"points": [315, 995, 330, 1040],
+					"type": "office"
+				},
+				{
+					"id": "j.archiv",
+					"points": [266, 980, 300, 1040],
+					"type": "unknown"
+				},
+				{
+					"id": "j.021",
+					"points": [176, 980, 266, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.022",
+					"points": [86, 980, 176, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.023",
+					"points": [0, 950, 86, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.bufet",
+					"points": [0, 920, 86, 950],
+					"type": "services"
+				},
+				{
+					"id": "j.uf1",
+					"points": [36, 870, 86, 920],
+					"type": "class"
+				},
+				{
+					"id": "j.uf2",
+					"points": [36, 820, 86, 870],
+					"type": "class"
+				},
+				{
+					"id": "j.veducasj",
+					"points": [36, 770, 86, 820],
+					"type": "office"
+				},
+				{
+					"id": "j.uf3",
+					"points": [116, 870, 156, 920],
+					"type": "class"
+				},
+				{
+					"id": "j.uf4",
+					"points": [116, 820, 156, 870],
+					"type": "class"
+				},
+				{
+					"id": "j.sj_unk",
+					"points": [116, 770, 156, 820],
+					"type": "unknown"
+				},
+				{
+					"id": "j.0wcw",
+					"points": [240, 920, 330, 950],
+					"type": "wcw"
+				},
+				{
+					"id": "j.0wcm",
+					"points": [420, 920, 510, 950],
+					"type": "wcm"
+				},
+				{
+					"id": "tv.tv",
+					"points": [550, 450, 700, 720],
+					"type": "gym"
+				},
+				{
+					"id": "tv.kabinet1",
+					"points": [550, 320, 610, 350],
+					"type": "office"
+				},
+				{
+					"id": "tv.sklad",
+					"points": [550, 350, 610, 380],
+					"type": "unknown"
+				},
+				{
+					"id": "tv.wcm",
+					"points": [550, 380, 610, 410],
+					"type": "wcm"
+				},
+				{
+					"id": "tv.satnam",
+					"points": [550, 410, 610, 450],
+					"type": "unknown"
+				},
+				{
+					"id": "tv.kabinet2",
+					"points": [640, 420, 700, 450],
+					"type": "office"
+				},
+				{
+					"id": "tv.satnaw",
+					"points": [640, 320, 700, 390],
+					"type": "unknown"
+				},
+				{
+					"id": "tv.wcw",
+					"points": [640, 390, 700, 420],
+					"type": "wcw"
+				}
+			]
+		},
+		"1": {
+			"polygons": [
+				[[0, 0], [720, 0], [720, 120], [156, 120], [156, 320], [36, 320], [36, 120], [0, 120]],
+				[[0, 920], [36, 920], [36, 720], [156, 720], [156, 920], [720, 920], [720, 1040], [0, 1040]],
+				[[550, 320], [700, 320], [700, 450], [550, 450]],
+				[[0, 320], [280, 320], [280, 720], [0, 720]]
+			],
+			"lines": [
+				[630, 30, 660, 30],
+				[630, 950, 660, 950],
+				[86, 950, 116, 950]
+			],
+			"stairs": [
+				{
+					"points": [600, 0, 630, 30],
+					"divisions": [6, 2]
+				},
+				{
+					"points": [86, 60, 120, 90],
+					"divisions": [2, 6]
+				},
+				{
+					"points": [61, 270, 86, 320],
+					"divisions": [5, 2]
+				},
+				{
+					"points": [600, 920, 630, 950],
+					"divisions": [6, 2]
+				},
+				{
+					"points": [116, 920, 146, 950],
+					"divisions": [6, 2]
+				},
+				{
+					"points": [61, 720, 86, 770],
+					"divisions": [5, 2]
+				},
+				{
+					"points": [625, 350, 640, 390],
+					"divisions": [1, 6]
+				}
+			],
+			"rooms": [
+				{
+					"id": "m.101",
+					"points": [0, 0, 86, 90],
+					"type": "class"
+				},
+				{
+					"id": "m.Kmat",
+					"points": [0, 90, 86, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.111",
+					"points": [660, 0, 720, 90],
+					"type": "class"
+				},
+				{
+					"id": "m.110",
+					"points": [630, 60, 660, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.109",
+					"points": [540, 60, 630, 120],
+					"type": "class"
+				},
+				{
+					"id": "m.108",
+					"points": [450, 60, 540, 120],
+					"type": "class"
+				},
+				{
+					"id": "m.107",
+					"points": [360, 60, 450, 120],
+					"type": "class"
+				},
+				{
+					"id": "m.106",
+					"points": [330, 60, 360, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.105",
+					"points": [240, 60, 330, 120],
+					"type": "class"
+				},
+				{
+					"id": "m.104",
+					"points": [180, 60, 240, 120],
+					"type": "class"
+				},
+				{
+					"id": "m.102",
+					"points": [120, 60, 150, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.103",
+					"points": [150, 60, 180, 120],
+					"type": "office"
+				},
+				{
+					"id": "m.Kaj",
+					"points": [210, 0, 270, 30],
+					"type": "office"
+				},
+				{
+					"id": "m.1wcw",
+					"points": [270, 0, 360, 30],
+					"type": "wcw"
+				},
+				{
+					"id": "m.1wcm",
+					"points": [360, 0, 450, 30],
+					"type": "wcm"
+				},
+				{
+					"id": "m.kls",
+					"points": [450, 0, 510, 30],
+					"type": "office"
+				},
+				{
+					"id": "m.Ktsv1",
+					"points": [120, 120, 156, 150],
+					"type": "office"
+				},
+				{
+					"id": "m.satnam",
+					"points": [120, 150, 156, 210],
+					"type": "unknown"
+				},
+				{
+					"id": "m.satnam_wc",
+					"points": [120, 210, 156, 240],
+					"type": "wcm"
+				},
+				{
+					"id": "m.unkn1",
+					"points": [120, 240, 156, 270],
+					"type": "unknown"
+				},
+				{
+					"id": "m.Ktsv2",
+					"points": [36, 120, 86, 150],
+					"type": "office"
+				},
+				{
+					"id": "m.satnaw",
+					"points": [36, 150, 86, 210],
+					"type": "unknown"
+				},
+				{
+					"id": "m.satnaw_wc",
+					"points": [36, 210, 86, 240],
+					"type": "wcw"
+				},
+				{
+					"id": "m.unkn2",
+					"points": [36, 240, 86, 270],
+					"type": "unknown"
+				},
+				{
+					"id": "m.tv5",
+					"points": [0, 350, 140, 520],
+					"type": "gym"
+				},
+				{
+					"id": "m.tv6",
+					"points": [140, 350, 280, 520],
+					"type": "gym"
+				},
+				{
+					"id": "j.tv4",
+					"points": [0, 520, 140, 690],
+					"type": "gym"
+				},
+				{
+					"id": "j.tv3",
+					"points": [140, 520, 280, 690],
+					"type": "gym"
+				},
+				{
+					"id": "m.tv6sklad",
+					"points": [140, 320, 280, 350],
+					"type": "unknown"
+				},
+				{
+					"id": "m.tv5sklad",
+					"points": [0, 320, 86, 350],
+					"type": "unknown"
+				},
+				{
+					"id": "j.tvping",
+					"points": [140, 690, 280, 720],
+					"type": "gym"
+				},
+				{
+					"id": "j.tv4sklad",
+					"points": [0, 690, 86, 720],
+					"type": "unknown"
+				},
+				{
+					"id": "j.103",
+					"points": [176, 980, 266, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.102",
+					"points": [86, 980, 176, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.101",
+					"points": [0, 950, 86, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.100",
+					"points": [0, 920, 86, 950],
+					"type": "office"
+				},
+				{
+					"id": "j.104",
+					"points": [266, 980, 360, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.106",
+					"points": [360, 980, 450, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.107",
+					"points": [450, 980, 540, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.109",
+					"points": [540, 980, 630, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.110",
+					"points": [630, 980, 660, 1040],
+					"type": "services"
+				},
+				{
+					"id": "j.113",
+					"points": [660, 980, 720, 1040],
+					"type": "class"
+				},
+				{
+					"id": "j.111",
+					"points": [660, 920, 720, 950],
+					"type": "office"
+				},
+				{
+					"id": "j.112",
+					"points": [690, 950, 720, 980],
+					"type": "office"
+				},
+				{
+					"id": "j.1wcw",
+					"points": [270, 920, 360, 950],
+					"type": "wcw"
+				},
+				{
+					"id": "j.1wcm",
+					"points": [360, 920, 450, 950],
+					"type": "wcm"
+				},
+				{
+					"id": "j.105",
+					"points": [210, 920, 270, 950],
+					"type": "office"
+				},
+				{
+					"id": "j.108",
+					"points": [450, 920, 510, 950],
+					"type": "office"
+				}
+			]
+		}
+	}
+}

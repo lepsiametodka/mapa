@@ -1,0 +1,526 @@
+{
+	"m.05": {
+		"primary_name": "4.A",
+		"number": "05",
+		"other_names": ["4a", "IV.A"],
+		"floor": "0",
+		"side": "M"
+	},
+	"m.04": {
+		"primary_name": "Chemické lab.",
+		"number": "04",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.Kche": {
+		"primary_name": "Kabinet chémie",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.cheprip": {
+		"primary_name": "Prípravovňa",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.kniznica": {
+		"primary_name": "Knižnica",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.zborovna": {
+		"primary_name": "Zborovňa",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.office": {
+		"primary_name": "Zástupkyne",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.riaditelka": {
+		"primary_name": "Riaditeľka",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.tajomnicka": {
+		"primary_name": "Tajomníčka",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.ekonomka": {
+		"primary_name": "Ekonomické odd.",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.sklad": {
+		"primary_name": "Sklad učebníc",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.bufet": {
+		"primary_name": "Bufet",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.u3": {
+		"primary_name": "U3",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.u4": {
+		"primary_name": "U4",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.u5": {
+		"primary_name": "U5",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.vratnica": {
+		"primary_name": "Vrátnica",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.03": {
+		"primary_name": "Personálne odd.",
+		"number": "03",
+		"floor": "0",
+		"side": "M"
+	},
+	"m.jedalen": {
+		"primary_name": "Jedáleň Metodova",
+		"floor": "0",
+		"side": "M"
+	},
+	"j.jedalen": {
+		"primary_name": "Jedáleň Jelačičova",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.i4": {
+		"primary_name": "i4",
+		"number": "013",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.psychologicka": {
+		"primary_name": "Psychologička",
+		"number": "011",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.zastupkyna": {
+		"primary_name": "Zástupkyňa",
+		"number": "012",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.zborovna8": {
+		"primary_name": "Zborovňa 8GYM",
+		"number": "015",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.mJ": {
+		"primary_name": "Multimediálka",
+		"other_names": ["mJ"],
+		"number": "016",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.uz0": {
+		"primary_name": "Dejepisná študovňa",
+		"other_names": ["uz0"],
+		"number": "017",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.skolnik": {
+		"primary_name": "Školník",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.vratnica": {
+		"primary_name": "Vrátnica",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.022": {
+		"primary_name": "Tercia B",
+		"number": "022",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.021": {
+		"primary_name": "Sekunda A",
+		"number": "021",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.023": {
+		"primary_name": "Kvarta A",
+		"number": "023",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.bufet": {
+		"primary_name": "Bufet",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.uf1": {
+		"primary_name": "uf1",
+		"number": "024",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.uf2": {
+		"primary_name": "uf2",
+		"number": "025",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.uf3": {
+		"primary_name": "uf3",
+		"number": "026",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.uf4": {
+		"primary_name": "uf4",
+		"number": "027",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.veducasj": {
+		"primary_name": "Vedúca ŠJ",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.0wcw": {
+		"primary_name": "WC Ženy",
+		"floor": "0",
+		"side": "J"
+	},
+	"j.0wcm": {
+		"primary_name": "WC Muži",
+		"floor": "0",
+		"side": "J"
+	},
+	"tv.tv": {
+		"primary_name": "Nová telocvična",
+		"other_names": ["tv1", "tv1_nova"],
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.kabinet1": {
+		"primary_name": "Kabninet TSV",
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.kabinet2": {
+		"primary_name": "Kabninet TSV",
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.satnam": {
+		"primary_name": "Šatňa muži",
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.satnaw": {
+		"primary_name": "Šatňa ženy",
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.wcw": {
+		"primary_name": "WC ženy",
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.wcm": {
+		"primary_name": "WC muži",
+		"floor": "0",
+		"side": "T"
+	},
+	"tv.sklad": {
+		"primary_name": "Sklad TSV",
+		"floor": "0",
+		"side": "T"
+	},
+	"m.101": {
+		"primary_name": "2.B",
+		"number": "101",
+		"other_names": ["2b", "II.B"],
+		"floor": "1",
+		"side": "M"
+	},
+	"m.Kmat": {
+		"primary_name": "Kabinet MAT",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.111": {
+		"primary_name": "Multimediálka",
+		"number": "111",
+		"other_names": ["mM", "multimediálna M"],
+		"floor": "1",
+		"side": "M"
+	},
+	"m.110": {
+		"primary_name": "Kabinet FYZ",
+		"number": "110",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.109": {
+		"primary_name": "Fyzikálne lab.",
+		"other_names": ["fyz", "fyzika"],
+		"number": "109",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.108": {
+		"primary_name": "info3",
+		"other_names": ["i3"],
+		"number": "108",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.107": {
+		"primary_name": "info2",
+		"other_names": ["i2"],
+		"number": "107",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.106": {
+		"primary_name": "Správca siete",
+		"number": "106",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.105": {
+		"primary_name": "info1",
+		"other_names": ["i1"],
+		"number": "105",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.104": {
+		"primary_name": "jazyková 1",
+		"other_names": ["j1"],
+		"number": "104",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.103": {
+		"primary_name": "Kabinet ANJ",
+		"number": "103",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.102": {
+		"primary_name": "Kabinet ANJ",
+		"number": "102",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.Kaj": {
+		"primary_name": "Kabinet ANJ",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.1wcw": {
+		"primary_name": "WC ženy",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.1wcm": {
+		"primary_name": "WC muži",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.kls": {
+		"primary_name": "Učitelia KLS",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.Ktsv1": {
+		"primary_name": "Kabninet TSV, ANJ, GEG",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.Ktsv2": {
+		"primary_name": "Kabninet TSV",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.satnam": {
+		"primary_name": "Šatňa muži",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.satnaw": {
+		"primary_name": "Šatňa ženy",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.satnam_wc": {
+		"primary_name": "WC muži",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.satnaw_wc": {
+		"primary_name": "WC ženy",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.tv5": {
+		"primary_name": "Telocvična 5",
+		"other_names": ["tv5"],
+		"floor": "1",
+		"side": "M"
+	},
+	"m.tv6": {
+		"primary_name": "Telocvična 6",
+		"other_names": ["tv6"],
+		"floor": "1",
+		"side": "M"
+	},
+	"m.tv5sklad": {
+		"primary_name": "Sklad TSV",
+		"floor": "1",
+		"side": "M"
+	},
+	"m.tv6sklad": {
+		"primary_name": "Sklad TSV",
+		"other_names": ["tv6"],
+		"side": "M"
+	},
+	"j.tv4": {
+		"primary_name": "Telocvična 4",
+		"other_names": ["tv4"],
+		"floor": "1",
+		"side": "J"
+	},
+	"j.tv3": {
+		"primary_name": "Telocvična 3",
+		"other_names": ["tv3"],
+		"floor": "1",
+		"side": "J"
+	},
+	"j.tv4sklad": {
+		"primary_name": "Sklad TSV",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.tvping": {
+		"primary_name": "Ping-pongové stoly",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.100": {
+		"primary_name": "Kabinet CJ",
+		"floor": "1",
+		"number": "100",
+		"side": "J"
+	},
+	"j.101": {
+		"primary_name": "Tercia A",
+		"other_names": ["ter a"],
+		"number": "101",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.102": {
+		"primary_name": "Septima B",
+		"other_names": ["sep b"],
+		"number": "102",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.103": {
+		"primary_name": "Sekunda B",
+		"other_names": ["sek b"],
+		"number": "103",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.104": {
+		"primary_name": "jazyková 1J",
+		"other_names": ["jJ"],
+		"number": "104",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.106": {
+		"primary_name": "Oktáva B",
+		"other_names": ["okt b"],
+		"number": "106",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.107": {
+		"primary_name": "Príma A",
+		"other_names": ["pri a"],
+		"number": "107",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.109": {
+		"primary_name": "Príma B",
+		"other_names": ["pri b"],
+		"number": "109",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.110": {
+		"primary_name": "Kuchynka",
+		"number": "110",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.111": {
+		"primary_name": "Kabinet SJ, CJ, HV",
+		"number": "111",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.112": {
+		"primary_name": "Kabinet NEJ",
+		"number": "112",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.113": {
+		"primary_name": "UZ 1",
+		"other_names": ["uz1"],
+		"number": "113",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.105": {
+		"primary_name": "Kabinet NEJ",
+		"number": "105",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.108": {
+		"primary_name": "Upratovačky",
+		"number": "108",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.1wcw": {
+		"primary_name": "WC Ženy",
+		"floor": "1",
+		"side": "J"
+	},
+	"j.1wcm": {
+		"primary_name": "WC Muži",
+		"floor": "1",
+		"side": "J"
+	}
+}
