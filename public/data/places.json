@@ -737,5 +737,72 @@
 		"primary_name": "Posilňovňa",
 		"floor": "2",
 		"side": "M"
+	},
+	"m.302": {
+		"primary_name": "1.C",
+		"number": "302",
+		"other_names": ["1c", "I.C"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.303": {
+		"primary_name": "Sexta B",
+		"number": "303",
+		"other_names": ["sex b"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.304": {
+		"primary_name": "Sexta A",
+		"number": "304",
+		"other_names": ["sex a"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.305": {
+		"primary_name": "3.A",
+		"number": "305",
+		"other_names": ["3a", "III.A"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.306": {
+		"primary_name": "2.A",
+		"number": "306",
+		"other_names": ["2a", "II.A"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.307": {
+		"primary_name": "Septima A",
+		"number": "307",
+		"other_names": ["sep a"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.308": {
+		"primary_name": "3.B",
+		"number": "308",
+		"other_names": ["3b", "III.B"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.309": {
+		"primary_name": "1.A",
+		"number": "309",
+		"other_names": ["1a", "I.A"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.310": {
+		"primary_name": "Kabinet MAT",
+		"number": "310",
+		"floor": "3",
+		"side": "M"
+	},
+	"m.Knej": {
+		"primary_name": "Kabinet NEJ",
+		"floor": "3",
+		"side": "M"
 	}
 }
