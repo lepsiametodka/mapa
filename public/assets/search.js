@@ -69,11 +69,11 @@ const showOnMap = (id, place) => {
     .duration(100)
     .delay(250)
     .style("stroke", "red")
-    .style("transform", "scale(2)")
+    .attr("transform", "scale(2)")
 
   g.select("#" + ID)
     .transition().delay(500).duration(100)
-    .style("transform", "")
+    .attr("transform", "")
     .style("stroke-width", "2px")
 
   g.selectAll(".rooms").sort((a, b) => (a.id === id ? 1 : -1))
