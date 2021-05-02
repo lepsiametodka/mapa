@@ -829,94 +829,135 @@
 		"primary_name": "Kabinet BLS",
 		"number": "300",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.301": {
 		"primary_name": "Učebňa fyziky",
 		"number": "301",
 		"other_names": ["fyz f", "fyzika f"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.302": {
 		"primary_name": "Kabinet fyziky",
 		"number": "302",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.303": {
 		"primary_name": "1.AF",
 		"number": "303",
 		"other_names": ["1af", "I.AF"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.304": {
 		"primary_name": "3.AF",
 		"number": "304",
 		"other_names": ["3af", "III.AF"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.305": {
 		"primary_name": "Kabinet FJL",
 		"number": "305",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.306": {
 		"primary_name": "1.BF",
 		"number": "306",
 		"other_names": ["1bf", "I.BF"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.307": {
 		"primary_name": "2.BF",
 		"number": "307",
 		"other_names": ["2bf", "II.BF"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.308": {
 		"primary_name": "2.AF",
 		"number": "308",
 		"other_names": ["2af", "II.AF"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.309": {
 		"primary_name": "Kabinet MAT",
 		"number": "309",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.310": {
 		"primary_name": "3.BF",
 		"number": "310",
 		"other_names": ["3bf", "III.BF"],
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.311": {
 		"primary_name": "Zborovňa KLS",
 		"number": "311",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.301k": {
 		"primary_name": "Kabinet FYZ",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.3wcw": {
 		"primary_name": "WC ženy",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
 	},
 	"j.3wcm": {
 		"primary_name": "WC muži",
 		"floor": "3",
-		"side": "j"
+		"side": "J"
+	},
+	"m.u6": {
+		"primary_name": "U6",
+		"floor": "-1",
+		"side": "M"
+	},
+	"m.u1": {
+		"primary_name": "U1",
+		"floor": "-1",
+		"side": "M"
+	},
+	"m.reg": {
+		"primary_name": "Registratúrne stredisko",
+		"floor": "-1",
+		"side": "M"
+	},
+	"m.satneA": {
+		"primary_name": "Skrínky Metodova",
+		"other_names": ["Šatne A"],
+		"floor": "-1",
+		"side": "M"
+	},
+	"j.spolocensky": {
+		"primary_name": "Spoločenský priestor",
+		"floor": "-1",
+		"side": "J"
+	},
+	"j.satneB": {
+		"primary_name": "Skrínky Jelačička B",
+		"floor": "-1",
+		"side": "J"
+	},
+	"j.satneA": {
+		"primary_name": "Skrínky Jelačička A",
+		"floor": "-1",
+		"side": "J"
+	},
+	"j.014": {
+		"primary_name": "Nejaká multimediálka??",
+		"floor": "-1",
+		"side": "J"
 	}
 }
