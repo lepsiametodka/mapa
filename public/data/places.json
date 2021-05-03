@@ -959,5 +959,10 @@
 		"primary_name": "Nejaká multimediálka??",
 		"floor": "-1",
 		"side": "J"
+	},
+	"m.kniznicaK": {
+		"primary_name": "Kabinet SJL",
+		"floor": "0",
+		"side": "M"
 	}
 }

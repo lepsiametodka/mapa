@@ -11,8 +11,57 @@
 		[[0, 920], [720, 120]],
 		[[550, 320], [150, 400]]
 	],
+	"streets": [
+		{
+			"x": 375,
+			"y": -80,
+			"name": "Metodova"
+		},
+		{
+			"x": 375,
+			"y": 1130,
+			"name": "Jelačičova"
+		}
+	],
 	"floors": {
 		"0": {
+			"entrances": [
+				{
+					"direction": "down",
+					"x": 375,
+					"y": -15
+				},
+				{
+					"direction": "up",
+					"x": 375,
+					"y": 135
+				},
+				{
+					"direction": "down",
+					"x": 375,
+					"y": 905
+				},
+				{
+					"direction": "down",
+					"x": 625,
+					"y": 305
+				},
+				{
+					"direction": "up",
+					"x": 375,
+					"y": 1055
+				},
+				{
+					"direction": "right",
+					"x": 171,
+					"y": 295
+				},
+				{
+					"direction": "right",
+					"x": 171,
+					"y": 745
+				}
+			],
 			"polygons": [
 				[[0, 0], [720, 0], [720, 120], [156, 120], [156, 320], [36, 320], [36, 120], [0, 120]],
 				[[0, 920], [36, 920], [36, 520], [156, 520], [156, 920], [720, 920], [720, 1040], [0, 1040]],
@@ -117,109 +166,146 @@
 				{
 					"id": "m.05",
 					"points": [0, 0, 86, 90],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 20, 86, 30]]
 				},
 				{
 					"id": "m.Kche",
 					"points": [0, 90, 86, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[86, 100, 86, 110]]
 				},
 				{
 					"id": "m.03",
 					"points": [270, 0, 300, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[285, 30, 295, 30]]
 				},
 				{
 					"id": "m.Kche2",
 					"points": [210, 0, 270, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[210, 15, 210, 25]]
 				},
 				{
 					"id": "m.vratnica",
 					"points": [300, 0, 330, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[330, 5, 330, 15]]
 				},
 				{
 					"id": "m.cheprip",
 					"points": [120, 60, 210, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [
+						[200, 60, 190, 60],
+						[210, 70, 210, 80]
+					]
 				},
 				{
 					"id": "m.04",
 					"points": [210, 60, 300, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[220, 60, 230, 60]]
 				},
 				{
 					"id": "m.kniznica",
-					"points": [450, 60, 540, 120],
-					"type": "services"
+					"points": [480, 60, 540, 120],
+					"type": "services",
+					"doors": [[490, 60, 500, 60]]
+				},
+				{
+					"id": "m.kniznicaK",
+					"points": [450, 60, 480, 120],
+					"type": "office",
+					"doors": [[480, 115, 480, 105]]
 				},
 				{
 					"id": "m.zborovna",
 					"points": [540, 60, 630, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[550, 60, 560, 60]]
 				},
 				{
 					"id": "m.office",
 					"points": [630, 60, 660, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[635, 60, 645, 60]]
 				},
 				{
 					"id": "m.ekonomka",
 					"points": [660, 0, 720, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[665, 30, 675, 30]]
 				},
 				{
 					"id": "m.tajomnicka",
 					"points": [690, 30, 720, 60],
-					"type": "office"
+					"type": "office",
+					"doors": [[690, 40, 690, 50]]
 				},
 				{
 					"id": "m.riaditelka",
 					"points": [660, 60, 720, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [
+						[665, 60, 675, 60],
+						[660, 70, 660, 80]
+					]
 				},
 				{
 					"points": [420, 0, 450, 30],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[420, 10, 420, 20]]
 				},
 				{
 					"points": [450, 0, 480, 30],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[460, 30, 470, 30]]
 				},
 				{
 					"points": [480, 0, 510, 30],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[510, 20, 510, 10]]
 				},
 				{
 					"id": "m.sklad",
 					"points": [120, 120, 156, 210],
-					"type": "services"
+					"type": "services",
+					"doors": [
+						[120, 130, 120, 140],
+						[120, 200, 120, 190]
+					]
 				},
 				{
 					"id": "m.bufet",
 					"points": [120, 210, 156, 270],
-					"type": "services"
+					"type": "services",
+					"doors": [[120, 220, 120, 230]]
 				},
 				{
 					"id": "m.u3",
 					"points": [36, 120, 86, 170],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 130, 86, 140]]
 				},
 				{
 					"id": "m.u4",
 					"points": [36, 170, 86, 220],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 180, 86, 190]]
 				},
 				{
 					"id": "m.u5",
 					"points": [36, 220, 86, 270],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 230, 86, 240]]
 				},
 				{
 					"id": "m.jedalen",
 					"points": [0, 320, 280, 520],
-					"type": "services"
+					"type": "services",
+					"doors": [[96, 320, 116, 320]]
 				},
 				{
 					"id": "j.jedalen",
@@ -334,42 +420,56 @@
 				{
 					"id": "tv.tv",
 					"points": [550, 450, 700, 720],
-					"type": "gym"
+					"type": "gym",
+					"doors": [[615, 450, 635, 450]]
 				},
 				{
 					"id": "tv.kabinet1",
 					"points": [550, 320, 610, 350],
-					"type": "office"
+					"type": "office",
+					"doors": [[610, 335, 610, 345]]
 				},
 				{
 					"id": "tv.sklad",
 					"points": [550, 350, 610, 380],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[610, 365, 610, 375]]
 				},
 				{
 					"id": "tv.wcm",
 					"points": [550, 380, 610, 410],
-					"type": "wcm"
+					"type": "wcm",
+					"doors": [[610, 395, 610, 405]]
 				},
 				{
 					"id": "tv.satnam",
 					"points": [550, 410, 610, 450],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [
+						[610, 430, 610, 440],
+						[570, 410, 580, 410]
+					]
 				},
 				{
 					"id": "tv.kabinet2",
 					"points": [640, 420, 700, 450],
-					"type": "office"
+					"type": "office",
+					"doors": [[640, 430, 640, 440]]
 				},
 				{
 					"id": "tv.satnaw",
 					"points": [640, 320, 700, 390],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[640, 335, 640, 345]]
 				},
 				{
 					"id": "tv.wcw",
 					"points": [640, 390, 700, 420],
-					"type": "wcw"
+					"type": "wcw",
+					"doors": [
+						[640, 405, 640, 415],
+						[680, 390, 690, 390]
+					]
 				}
 			]
 		},
@@ -419,82 +519,104 @@
 				{
 					"id": "m.101",
 					"points": [0, 0, 86, 90],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 20, 86, 30]]
 				},
 				{
 					"id": "m.Kmat",
 					"points": [0, 90, 86, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[86, 100, 86, 110]]
 				},
 				{
 					"id": "m.111",
 					"points": [660, 0, 720, 90],
-					"type": "class"
+					"type": "class",
+					"doors": [[660, 40, 660, 50]]
 				},
 				{
 					"id": "m.110",
 					"points": [630, 60, 660, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [
+						[635, 60, 645, 60],
+						[630, 65, 630, 75]
+					]
 				},
 				{
 					"id": "m.109",
 					"points": [540, 60, 630, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[550, 60, 560, 60]]
 				},
 				{
 					"id": "m.108",
 					"points": [450, 60, 540, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[460, 60, 470, 60]]
 				},
 				{
 					"id": "m.107",
 					"points": [360, 60, 450, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[370, 60, 380, 60]]
 				},
 				{
 					"id": "m.106",
 					"points": [330, 60, 360, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[340, 60, 350, 60]]
 				},
 				{
 					"id": "m.105",
 					"points": [240, 60, 330, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[250, 60, 260, 60]]
 				},
 				{
 					"id": "m.104",
 					"points": [180, 60, 240, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[190, 60, 200, 60]]
 				},
 				{
 					"id": "m.102",
 					"points": [120, 60, 150, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[130, 60, 140, 60]]
 				},
 				{
 					"id": "m.103",
 					"points": [150, 60, 180, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [
+						[160, 60, 170, 60],
+						[150, 90, 150, 100]
+					]
 				},
 				{
 					"id": "m.Kaj",
 					"points": [210, 0, 270, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[220, 30, 230, 30]]
 				},
 				{
 					"id": "m.1wcw",
 					"points": [270, 0, 360, 30],
-					"type": "wcw"
+					"type": "wcw",
+					"doors": [[355, 30, 345, 30]]
 				},
 				{
 					"id": "m.1wcm",
 					"points": [360, 0, 450, 30],
-					"type": "wcm"
+					"type": "wcm",
+					"doors": [[365, 30, 375, 30]]
 				},
 				{
 					"id": "m.kls",
 					"points": [450, 0, 510, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[510, 25, 510, 15]]
 				},
 				{
 					"id": "m.Ktsv1",
@@ -504,17 +626,20 @@
 				{
 					"id": "m.satnam",
 					"points": [120, 150, 156, 210],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[120, 175, 120, 185]]
 				},
 				{
 					"id": "m.satnam_wc",
 					"points": [120, 210, 156, 240],
-					"type": "wcm"
+					"type": "wcm",
+					"doors": [[125, 210, 135, 210]]
 				},
 				{
 					"id": "m.unkn1",
 					"points": [120, 240, 156, 270],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[120, 245, 120, 255]]
 				},
 				{
 					"id": "m.Ktsv2",
@@ -524,22 +649,26 @@
 				{
 					"id": "m.satnaw",
 					"points": [36, 150, 86, 210],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[86, 175, 86, 185]]
 				},
 				{
 					"id": "m.satnaw_wc",
 					"points": [36, 210, 86, 240],
-					"type": "wcw"
+					"type": "wcw",
+					"doors": [[81, 210, 71, 210]]
 				},
 				{
 					"id": "m.unkn2",
 					"points": [36, 240, 86, 270],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[86, 245, 86, 255]]
 				},
 				{
 					"id": "m.tv5",
 					"points": [0, 350, 140, 520],
-					"type": "gym"
+					"type": "gym",
+					"doors": [[110, 320, 130, 320]]
 				},
 				{
 					"id": "m.tv6",
@@ -559,12 +688,14 @@
 				{
 					"id": "m.tv6sklad",
 					"points": [140, 320, 280, 350],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[140, 335, 140, 345]]
 				},
 				{
 					"id": "m.tv5sklad",
 					"points": [0, 320, 86, 350],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[5, 350, 15, 350]]
 				},
 				{
 					"id": "j.tvping",
@@ -689,7 +820,8 @@
 				{
 					"id": "tv.tanecne",
 					"points": [640, 320, 700, 450],
-					"type": "gym"
+					"type": "gym",
+					"doors": [[640, 325, 640, 335]]
 				},
 				{
 					"id": "tv.byt",
@@ -740,32 +872,41 @@
 				{
 					"id": "m.202",
 					"points": [0, 0, 86, 90],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 20, 86, 30]]
 				},
 				{
 					"id": "m.Kobn",
 					"points": [0, 90, 86, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[86, 100, 86, 110]]
 				},
 				{
 					"id": "m.210k",
 					"points": [660, 0, 720, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[665, 30, 675, 30]]
 				},
 				{
 					"id": "m.210",
 					"points": [660, 30, 720, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[660, 40, 660, 50]]
 				},
 				{
 					"id": "m.209",
 					"points": [600, 60, 660, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[640, 60, 650, 60]]
 				},
 				{
 					"id": "m.208",
 					"points": [570, 60, 600, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [
+						[580, 60, 590, 60],
+						[600, 65, 600, 75]
+					]
 				},
 				{
 					"id": "m.207",
@@ -785,32 +926,38 @@
 				{
 					"id": "m.204",
 					"points": [210, 60, 300, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[220, 60, 230, 60]]
 				},
 				{
 					"id": "m.203",
 					"points": [120, 60, 210, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[130, 60, 140, 60]]
 				},
 				{
 					"id": "m.Ksjl",
 					"points": [210, 0, 270, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[220, 30, 230, 30]]
 				},
 				{
 					"id": "m.2wcw",
 					"points": [270, 0, 360, 30],
-					"type": "wcw"
+					"type": "wcw",
+					"doors": [[355, 30, 345, 30]]
 				},
 				{
 					"id": "m.2wcm",
 					"points": [360, 0, 450, 30],
-					"type": "wcm"
+					"type": "wcm",
+					"doors": [[365, 30, 375, 30]]
 				},
 				{
 					"id": "m.Kgeo",
 					"points": [450, 0, 510, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[510, 25, 510, 15]]
 				},
 				{
 					"id": "m.gym",
@@ -925,22 +1072,26 @@
 				{
 					"id": "m.302",
 					"points": [0, 0, 86, 90],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 20, 86, 30]]
 				},
 				{
 					"id": "m.Knej",
 					"points": [0, 90, 86, 120],
-					"type": "office"
+					"type": "office",
+					"doors": [[86, 100, 86, 110]]
 				},
 				{
 					"id": "m.310",
 					"points": [660, 0, 720, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[665, 30, 675, 30]]
 				},
 				{
 					"id": "m.309",
 					"points": [660, 30, 720, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[660, 40, 660, 50]]
 				},
 				{
 					"id": "m.308",
@@ -975,22 +1126,26 @@
 				{
 					"id": "m.Kfrj",
 					"points": [210, 0, 270, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[220, 30, 230, 30]]
 				},
 				{
 					"id": "m.3wcw",
 					"points": [270, 0, 360, 30],
-					"type": "wcw"
+					"type": "wcw",
+					"doors": [[355, 30, 345, 30]]
 				},
 				{
 					"id": "m.3wcm",
 					"points": [360, 0, 450, 30],
-					"type": "wcm"
+					"type": "wcm",
+					"doors": [[365, 30, 375, 30]]
 				},
 				{
 					"id": "m.Kdu",
 					"points": [450, 0, 510, 30],
-					"type": "office"
+					"type": "office",
+					"doors": [[460, 30, 470, 30]]
 				},
 				{
 					"id": "j.308",
@@ -1127,22 +1282,26 @@
 				{
 					"id": "m.u6",
 					"points": [0, 0, 86, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[86, 20, 86, 30]]
 				},
 				{
 					"id": "m.u1s",
 					"points": [660, 0, 720, 30],
-					"type": "unknown"
+					"type": "unknown",
+					"doors": [[665, 30, 675, 30]]
 				},
 				{
 					"id": "m.u1",
 					"points": [660, 30, 720, 120],
-					"type": "class"
+					"type": "class",
+					"doors": [[660, 40, 660, 50]]
 				},
 				{
 					"id": "m.reg",
 					"points": [570, 60, 630, 90],
-					"type": "office"
+					"type": "office",
+					"doors": [[575, 60, 585, 60]]
 				},
 				{
 					"id": "m.satneA",

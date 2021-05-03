@@ -7,9 +7,9 @@ const renderFloor = (number) => {
 
 	renderRooms(floor.rooms)
 	renderLabelsForRooms(floor.rooms)
+	renderEntrances(floor.entrances || [])
 
 	document.getElementById("floor-number").innerText = number
-	updateLocation()
 }
 
 const renderStairs = (stairs) => {
@@ -75,6 +75,7 @@ const renderLines = (lines) => {
 
 const renderRooms = rooms => {
 	g.selectAll(".rooms").remove()
+	g.selectAll(".door").remove()
 	g.selectAll(".rooms")
 		.data(rooms)
 		.enter()
@@ -89,4 +90,36 @@ const renderRooms = rooms => {
 		.style("stroke", "black")
 		.attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + "px " + ((d.points[3] + d.points[1]) / 2) + "px")
 		.style("stroke-width", "1px")
+
+	g.selectAll(".door")
+		.data(rooms.map(x => x.doors || []).flat())
+		.enter()
+		.append("line")
+		.attr("class", "door")
+		.attr("x1", d => d[0])
+		.attr("y1", d => d[1])
+		.attr("x2", d => d[2])
+		.attr("y2", d => d[3])
+		.style("stroke", "red")
+		.style("stroke-width", "1px")
+}
+
+const renderEntrances = entrances => {
+	const POINTS = {
+		"down": [[0, 0], [-7, -14], [0, -14], [0, -30], [0, -14], [7, -14]],
+		"up": [[0, 0], [7, 14], [0, 14], [0, 30], [0, 14], [-7, 14]],
+		"right": [[0, 0], [14, 7], [14, 0], [30, 0], [14, 0], [14, -7]],
+		"left": [[0, 0], [-14, -7], [-14, 0], [-30, 0], [-14, 0], [-14, 7]]
+	}
+
+	g.selectAll(".entrances").remove()
+	g.selectAll(".entrances")
+		.data(entrances)
+		.enter()
+		.append("polygon")
+		.attr("class", "entrances")
+		.attr("points", d => POINTS[d.direction].map(p => (p[0] + d.x) + "," + (p[1] + d.y)).join(" "))
+		.style("stroke", "hsl(0deg, 0%, 60%)")
+		.style("fill", "transparent")
+		.style("stroke-width", "2px")
 }

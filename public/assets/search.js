@@ -67,7 +67,8 @@ const doSearch = () => {
 
 document.getElementById("searchbar").addEventListener("keyup", doSearch )
 
-const showOnMap = (id, place) => {
+const showOnMap = (id) => {
+  const place = PLACES[id]
   FLOOR_NUMBER = parseInt(place.floor)
   renderFloor(FLOOR_NUMBER)
   resetZoom()
@@ -95,8 +96,8 @@ document.getElementById("results").addEventListener("click", (e) => {
   } else {
     target = e.target.parentNode
   }
-  const result = PLACES[target.dataset.id]
-  showOnMap(target.dataset.id, result)
+  showOnMap(target.dataset.id)
+  window.location.hash = "room/" + target.dataset.id
   document.getElementById("searchbar").value = ""
   document.getElementById("results").style.display = "none"
 })

@@ -35,6 +35,20 @@ const drawFloorPlan = (data) => {
 		.style("stroke", "hsl(0deg, 0%, 75%)")
 		.style("fill", "hsl(0deg, 0%, 95%)")
 		.style("stroke-width", "2px")
+
+	g.selectAll('.streets')
+		.data(DATA.streets)
+		.enter()
+		.append("text")
+		.attr("class", "streets")
+		.attr("dx", d => d.x)
+		.attr("dy", d => d.y)
+		.attr("text-anchor", "middle")
+		.attr("dominant-baseline", "middle")
+		.text(d => d.name)
+		.style("font-family", "Roboto")
+		.style("fill", "hsl(0, 0%, 70%)")
+		.style("font-size", "48px")
 }
 
 const fillForType = type => {
@@ -67,7 +81,7 @@ const resetZoom = () => {
 	if (width < height) {
 		size = (width - 100) / DATA.dimensions.width
 	} else {
-		size = (height - 200) / DATA.dimensions.height
+		size = (height - 200) / (DATA.dimensions.height + 160)
 	}
 
 	const t = d3.zoomIdentity.translate((width - DATA.dimensions.width * size) / 2, (height - DATA.dimensions.height * size) / 2).scale(size)
@@ -77,7 +91,6 @@ const resetZoom = () => {
 d3.json("data/places.json")
 	.then((places) => {
 		PLACES = places
-
 		setupFuse()
 
 		d3.json("data/geometry.json")
@@ -85,15 +98,28 @@ d3.json("data/places.json")
 				DATA = data
 				drawFloorPlan(data.floorplan)
 				resetZoom()
-
-				// drawFloor(data.floors['0'])
-				renderFloor(FLOOR_NUMBER)
+				initialRender()
 			})
 	})
 
+const initialRender = () => {
+	if (window.location.hash.indexOf("/") === -1) {
+		renderFloor(0)
+		return
+	}
 
-const updateLocation = () => {
-	window.location.hash = FLOOR_NUMBER
+	const parts = window.location.hash.substr(1).split("/")
+	switch (parts[0]) {
+		case "map":
+			FLOOR_NUMBER = parseInt(parts[1])
+			renderFloor(FLOOR_NUMBER)
+			break
+		case "room":
+			showOnMap(parts[1])
+			break
+		default:
+			renderFloor(0)
+	}
 }
 
 
@@ -104,7 +130,7 @@ document.getElementById("floor-up").addEventListener("click", () => {
 
 	FLOOR_NUMBER += 1
 	renderFloor(FLOOR_NUMBER)
-	updateLocation()
+	window.location.hash = "map/" + FLOOR_NUMBER
 })
 
 document.getElementById("floor-down").addEventListener("click", () => {
@@ -114,5 +140,5 @@ document.getElementById("floor-down").addEventListener("click", () => {
 
 	FLOOR_NUMBER -= 1
 	renderFloor(FLOOR_NUMBER)
-	updateLocation()
+	window.location.hash = "map/" + FLOOR_NUMBER
 })
