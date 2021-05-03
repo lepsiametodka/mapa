@@ -21,6 +21,7 @@ body {
     flex-direction: column;
 
     border: 1px solid #999;
+    user-select: none;
 }
 
 .floor-btn {
@@ -97,4 +98,8 @@ body {
 
 .result-location {
     color: rgba(0, 0, 0, .5);
+}
+
+svg {
+    cursor: default;
 }
