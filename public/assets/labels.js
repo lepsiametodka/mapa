@@ -34,8 +34,18 @@ const renderLabelsForRooms = rooms => {
 			const pxPerChar = Math.min(width / d.primary.length, 7)
 			return (pxPerChar / 6 * 10) + "px"
 		})
-		.style("transform", d => (d.points[3] - d.points[1] > d.points[2] - d.points[0] ? "rotate(-90)" : ""))
-		.style("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + "px " + ((d.points[3] + d.points[1]) / 2 + 1) + "px")
+		.style("transform", d => {
+			let w	= d.points[2] - d.points[0]
+			let h = d.points[3] - d.points[1]
+
+			if (w <= h) {
+				let cX = (d.points[2] + d.points[0]) / 2
+				let cY = (d.points[3] + d.points[1]) / 2
+				return "translate(" + cX + "px, " + cY + "px) rotate(-90deg) translate(" + cX * -1 + "px, " + cY * -1 + "px)"
+			} else {
+				return ""
+			}
+		})
 
 	g.selectAll('.label_num')
 		.data(labelsToRender)
