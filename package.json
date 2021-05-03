@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "scripts": {
+    "build-css": "cross-env NODE_ENV=production postcss src/app.css -o assets/app.min.css",
+    "dev-css": "postcss src/app.css -o public/assets/app.min.css"
+  }
+}

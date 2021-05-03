@@ -7,23 +7,72 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/app.css">
+	<link rel="stylesheet" href="assets/app.min.css">
 </head>
-<body>
-	<div id="map"></div>
-
-	<div class="search">
-		<input type="text" id="searchbar" placeholder="Vyhľadávanie" autocomplete="off">
-
-		<div class="search-results" id="results" style="display: none;">
+<body class="antialiased overflow-hidden w-screen h-screen flex flex-col md:flex-row">
+	<div class="flex md:hidden w-full border-b text-center font-bold p-4 shadow-lg border-b">
+		<div>Mapa Metodky</div>
+		<div class="ml-auto text-gray-700 cursor-pointer" id="js-hamburger">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
 		</div>
 	</div>
 
-	<div class="floor-controls">
-		<div class="floor-btn" id="floor-up">+</div>
-		<div class="floor-label">Poschodie</div>
-		<div class="floor-number" id="floor-number">0</div>
-		<div class="floor-btn" id="floor-down">-</div>
+	<div class="bg-white h-full w-full md:w-1/5 shadow-lg z-10 hidden flex md:flex flex-shrink-0 flex-col border-r" id="sidebar-md-normal">
+		<div class="w-full flex border-b text-center font-bold">
+			<div class="cursor-pointer flex-grow p-4 text-white bg-red-600">Vyhľadávanie</div>
+			<div class="cursor-pointer flex-grow p-4">Navigácia</div>
+		</div>
+
+		<div class="flex-grow p-4">
+			<input type="text" id="searchbar" class="block py-2 px-4 rounded-md border w-full focus:border-black focus:ring" placeholder="Názov, číslo, označenie miestnosti..." autocomplete="off">
+
+			<div id="results" class="mt-6 flex flex-col gap-y-4"></div>
+			<div id="results-empty" class="mt-6 text-gray-500 text-center text-xl flex flex-col items-center">
+				<div class="text-white bg-gray-400 p-3 rounded-full mb-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-frown"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+				</div>
+				Nič tu nie je.
+			</div>
+		</div>
+
+		<a href="https://lepsiametodka.sk" class="flex flex-col items-center justify-center pb-8 mt-6">
+			<img src="https://lepsiametodka.sk/static/images/logo.png" alt="Lepšia Metodka" class="h-10">
+			<span class="text-gray-500 text-xs mt-2">&copy; Lepšia Metodka 2021</span>
+		</a>
+	</div>
+
+<!--	<div class="bg-white w-full h-full md:w-1/5 shadow-lg flex flex-shrink-0 flex-col border-r z-10" id="sidebar-md-detail">-->
+<!--		<div class="w-full flex border-b text-center font-bold p-4">-->
+<!--			<div>Detail miestnosti</div>-->
+<!--			<div class="ml-auto text-gray-700 cursor-pointer" id="js-detail-close">-->
+<!--				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>-->
+<!--			</div>-->
+<!--		</div>-->
+
+<!--		<div class="w-full bg-red-600 text-white text-center py-10 px-4">-->
+<!--			<h2 class="font-light text-3xl">Telocvična 5</h2>-->
+<!--		</div>-->
+
+<!--		<div class="p-4 overflow-y-scroll flex-grow">-->
+<!--			haj haj haj-->
+<!--		</div>-->
+<!--	</div>-->
+
+	<svg id="map" class="flex-grow w-full h-full"></svg>
+
+	<div class="fixed bottom-6 right-6 flex gap-x-2">
+		<div class="bg-white p-3 rounded-full shadow cursor-pointer hover:bg-gray-200" id="floor-up">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+		</div>
+
+		<div class="bg-white px-5 py-3 rounded-full shadow flex items-center gap-x-1.5">
+			<span class="text-xs">Poschodie</span>
+			<span id="floor-number" class="font-bold">??</span>
+		</div>
+
+		<div class="bg-white p-3 rounded-full shadow cursor-pointer hover:bg-gray-200" id="floor-down">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+		</div>
 	</div>
 
 	<script src="assets/d3.min.js"></script>

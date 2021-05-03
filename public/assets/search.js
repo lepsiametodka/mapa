@@ -19,16 +19,16 @@ const setupFuse = () => {
 const doSearch = () => {
   const input = document.getElementById("searchbar").value
   if (input === "") {
-    document.getElementById("results").style.display = "none"
+    document.getElementById("results-empty").style.display = ""
   }
 
   const results = fuse.search(input)
 
-  document.getElementById("results").style.display = ""
+  document.getElementById("results-empty").style.display = "none"
   document.getElementById("results").innerHTML = ""
 
   if (results.length === 0) {
-    document.getElementById("results").style.display = "none"
+    document.getElementById("results-empty").style.display = ""
   }
 
   for (let result of results.slice(0, 5)){
@@ -52,8 +52,9 @@ const doSearch = () => {
       prettyLoc += "Nová telocvična (na dvore)"
     }
 
+    let other = ""
     if ("other_names" in result) {
-      prettyLoc += "; tiež známe ako: " + result.other_names.join(", ")
+      other = "iné názvy: " + result.other_names.join(", ")
     }
 
     let name = result.primary_name
@@ -61,7 +62,11 @@ const doSearch = () => {
       name += " ("+result.number+")"
     }
 
-    document.getElementById("results").innerHTML += '<div class="result" data-id="' + result.id + '"><div class="result-name">' + name + '</div><div class="result-location">' + prettyLoc + '</div></div>'
+    document.getElementById("results").innerHTML += `<div class="result px-4 py-2 hover:bg-gray-100 cursor-pointer rounded-md" data-id="${result.id}">
+        <div class="font-bold text-lg">${name}</div>
+        <div class="text-gray-500">${prettyLoc}</div>
+        <div class="text-gray-500 text-sm">${other}</div>
+      </div>`
   }
 }
 
@@ -96,8 +101,12 @@ document.getElementById("results").addEventListener("click", (e) => {
   } else {
     target = e.target.parentNode
   }
+
+  document.getElementById("sidebar-md-normal").classList.add("hidden")
+
   showOnMap(target.dataset.id)
   window.location.hash = "room/" + target.dataset.id
   document.getElementById("searchbar").value = ""
-  document.getElementById("results").style.display = "none"
+  document.getElementById("results-empty").style.display = ""
+  document.getElementById("results").innerHTML = ""
 })

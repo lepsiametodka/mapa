@@ -1,13 +1,9 @@
-const width = window.innerWidth
-const height = window.innerHeight
-
 let DATA = {}
 let PLACES = {}
 let FLOOR_NUMBER = parseInt(window.location.hash.substr(1)) || 0
+const IS_MOBILE = window.matchMedia("only screen and (max-width: 768px)").matches
 
-const svg = d3.select("#map").append("svg:svg")
-	.attr("width", width)
-	.attr("height", height)
+const svg = d3.select("#map")
 	.attr("style", "background: hsl(0deg, 0%, 85%)")
 
 svg.append("svg:defs").append("svg:marker")
@@ -88,14 +84,17 @@ const fillForType = type => {
 }
 
 const resetZoom = () => {
+	const mapBBox = document.getElementById("map").getBoundingClientRect()
+
 	let size
-	if (width < height) {
-		size = (width - 100) / DATA.dimensions.width
+	let diffY = IS_MOBILE ? -70 : 0
+	if (mapBBox.width < mapBBox.height) {
+		size = (mapBBox.width - 100) / DATA.dimensions.width
 	} else {
-		size = (height - 200) / (DATA.dimensions.height + 160)
+		size = (mapBBox.height - 200) / (DATA.dimensions.height + 160)
 	}
 
-	const t = d3.zoomIdentity.translate((width - DATA.dimensions.width * size) / 2, (height - DATA.dimensions.height * size) / 2).scale(size)
+	const t = d3.zoomIdentity.translate((mapBBox.width - DATA.dimensions.width * size) / 2, (mapBBox.height - DATA.dimensions.height * size) / 2).scale(size)
 	svg.call(zoom.transform, t)
 }
 
@@ -168,4 +167,14 @@ document.getElementById("floor-down").addEventListener("click", () => {
 	FLOOR_NUMBER -= 1
 	renderFloor(FLOOR_NUMBER)
 	setPathAfterFloorChange()
+})
+
+
+document.getElementById("js-hamburger").addEventListener("click", () => {
+	document.getElementById("sidebar-md-normal").classList.toggle("hidden")
+})
+
+document.getElementById("js-detail-close").addEventListener("click", () => {
+	document.getElementById("sidebar-md-detail").classList.add("hidden")
+	resetZoom()
 })

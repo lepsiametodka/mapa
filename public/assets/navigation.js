@@ -10,7 +10,6 @@ d3.json("data/paths.json")
 
 const drawCurrentPath = (floor) => {
   if (CURRENT_PATH === null) { return }
-  const floorPoints = CURRENT_PATH.filter(p => GRAPH_POINTS[p].floor === floor)
   let lines = []
 
   for (let i = 0; i < CURRENT_PATH.length - 1; i++) {
