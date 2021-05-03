@@ -9,6 +9,13 @@ const renderFloor = (number) => {
 	renderLabelsForRooms(floor.rooms)
 	renderEntrances(floor.entrances || [])
 
+	if (window.location.search.indexOf("debug") !== -1) {
+		drawDebugPaths(number)
+	}
+	if (CURRENT_PATH !== null) {
+		drawCurrentPath(number)
+	}
+
 	document.getElementById("floor-number").innerText = number
 }
 

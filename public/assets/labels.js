@@ -13,8 +13,6 @@ const renderLabelsForRooms = rooms => {
 		}
 	})
 
-	console.log(labelsToRender)
-
 	g.selectAll('.label').remove()
 	g.selectAll('.label_num').remove()
 

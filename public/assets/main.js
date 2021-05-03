@@ -10,6 +10,17 @@ const svg = d3.select("#map").append("svg:svg")
 	.attr("height", height)
 	.attr("style", "background: hsl(0deg, 0%, 85%)")
 
+svg.append("svg:defs").append("svg:marker")
+    .attr("id", "arrow")
+    .attr('refX', 2)//so that it comes towards the center.
+    .attr('refY', 3)//so that it comes towards the center.
+    .attr("markerWidth", 4)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+	.append("svg:path")
+    .attr("d", "M0,0 V6 L4,3 Z")
+		.attr("fill", "red")
+
 const g = svg.append("g")
 
 function zoomed({transform}) {
@@ -117,8 +128,24 @@ const initialRender = () => {
 		case "room":
 			showOnMap(parts[1])
 			break
+		case "route":
+			if (parts.length === 3) {
+				FLOOR_NUMBER = parseInt(parts[2])
+				renderFloor(FLOOR_NUMBER)
+			}
+			let pathPoints = parts[1].split(":")
+			displayPathBetween(pathPoints[0], pathPoints[1], parts.length === 3)
+			break
 		default:
 			renderFloor(0)
+	}
+}
+
+const setPathAfterFloorChange = () => {
+	if (CURRENT_PATH_POINTS.length !== 0) {
+		window.location.hash = "route/" + CURRENT_PATH_POINTS.join(":") + "/" + FLOOR_NUMBER
+	} else {
+		window.location.hash = "map/" + FLOOR_NUMBER
 	}
 }
 
@@ -130,7 +157,7 @@ document.getElementById("floor-up").addEventListener("click", () => {
 
 	FLOOR_NUMBER += 1
 	renderFloor(FLOOR_NUMBER)
-	window.location.hash = "map/" + FLOOR_NUMBER
+	setPathAfterFloorChange()
 })
 
 document.getElementById("floor-down").addEventListener("click", () => {
@@ -140,5 +167,5 @@ document.getElementById("floor-down").addEventListener("click", () => {
 
 	FLOOR_NUMBER -= 1
 	renderFloor(FLOOR_NUMBER)
-	window.location.hash = "map/" + FLOOR_NUMBER
+	setPathAfterFloorChange()
 })
