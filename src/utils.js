@@ -1,7 +1,9 @@
+import {mapInstance, PLACES} from './app'
+
 export function showOnMap(roomId) {
   const place = PLACES[roomId]
   const newNumber = parseInt(place.floor)
-  renderFloor(newNumber)
+  mapInstance.renderFloor(newNumber)
 
   const ID = roomId.replaceAll(".", "_")
   g.select("#" + ID)

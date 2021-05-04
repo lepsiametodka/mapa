@@ -1,5 +1,7 @@
 import Mustache from 'mustache'
 import {showOnMap} from '../utils'
+import {mapInstance, router} from '../app'
+import {resetZoom} from '../zoomUtils'
 
 export default class MobileUI {
   constructor() {

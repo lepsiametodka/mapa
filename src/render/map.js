@@ -31,6 +31,14 @@ export default class MapRender {
     this.rooms.render(floorData)
     this.labels.renderLabels(floorData)
 
+    // if (window.location.search.indexOf("debug") !== -1) {
+    // 	drawDebugPaths(number)
+    // }
+    // if (CURRENT_PATH !== null) {
+    // 	drawCurrentPath(number)
+    // }
+
+
 	  document.getElementById("floor-number").innerText = number
   }
 }

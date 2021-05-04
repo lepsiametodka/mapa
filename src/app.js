@@ -1,5 +1,5 @@
 import UniversalUI from "./ui/universal"
-import {zoomOnRoom, resetZoom} from './zoomUtils'
+import {resetZoom} from './zoomUtils'
 import MapRender from './render/map'
 import SearchUI from './ui/search'
 import Router from './router'
@@ -30,12 +30,26 @@ svg.call(zoom)
 export const mapInstance = new MapRender(g)
 export const uiInstance = new UniversalUI()
 export const router = new Router()
+const searchInstance = new SearchUI()
 
-window.resetZoom = resetZoom
-window.UniversalUI = UniversalUI
-window.SearchUI = SearchUI
-window.mapInstance = mapInstance
+export let DATA = {}
+export let PLACES = {}
+
+d3.json("data/places.json")
+	.then((places) => {
+		PLACES = places
+		searchInstance.dataLoaded()
+
+		d3.json("data/geometry.json")
+			.then((data) => {
+				DATA = data
+				mapInstance.dataLoaded(data)
+
+				resetZoom()
+				router.loadStateFromURL()
+			})
+	})
+
 window.g = g
 window.zoom = zoom
 window.svg = svg
-window.router = router

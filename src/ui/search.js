@@ -1,13 +1,17 @@
-import {uiInstance} from '../app'
+import {PLACES, uiInstance} from '../app'
 import {constants} from '../constants'
 import {showOnMap} from '../utils'
 import {zoomOnRoom} from '../zoomUtils'
+import Fuse from 'fuse.js'
 
 export default class SearchUI {
   constructor() {
     document.querySelectorAll(".js-search")
       .forEach(el => el.addEventListener("keyup", evt => this.handleSearch(evt)))
+  }
 
+  // TODO: Maybe index data only after first focus of search elements to speed up startup?
+  dataLoaded() {
     let FUSED_PLACES = []
 
     Object.entries(PLACES).forEach(entry => {

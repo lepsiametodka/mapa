@@ -1,3 +1,5 @@
+import {DATA} from './app'
+
 export function zoomOnRoom(roomId) {
 	const mapBBox = document.getElementById("map").getBoundingClientRect()
   const elementOnMap = g.select("#" + roomId.replaceAll(".", "_"))

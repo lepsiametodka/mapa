@@ -1,4 +1,4 @@
-import {uiInstance} from './app'
+import {mapInstance, uiInstance} from './app'
 import {showOnMap} from './utils'
 
 export default class Router {
@@ -8,7 +8,7 @@ export default class Router {
 
   loadStateFromURL() {
     if (window.location.hash.indexOf("/") === -1) {
-      renderFloor(0)
+      mapInstance.renderFloor(0)
       return
     }
 
@@ -16,7 +16,7 @@ export default class Router {
     switch (parts[0]) {
       case "map":
         this.mode = 'map'
-        renderFloor(parseInt(parts[1]))
+        mapInstance.renderFloor(parseInt(parts[1]))
         break
       case "room":
         this.mode = 'room'
@@ -26,13 +26,13 @@ export default class Router {
       case "route":
         this.mode = 'route'
         if (parts.length === 3) {
-          renderFloor(parseInt(parts[2]))
+          mapInstance.renderFloor(parseInt(parts[2]))
         }
         let pathPoints = parts[1].split(":")
         displayPathBetween(pathPoints[0], pathPoints[1], parts.length === 3)
         break
       default:
-        renderFloor(0)
+        mapInstance.renderFloor(0)
     }
   }
 

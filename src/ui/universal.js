@@ -1,6 +1,6 @@
 import MobileUI from './mobile'
 import SidebarUI from './computer'
-import {mapInstance, router} from '../app'
+import {mapInstance, PLACES, router} from '../app'
 import {constants} from '../constants'
 
 export default class UniversalUI {

@@ -1,3 +1,4 @@
+import {PLACES} from '../app'
 
 export default class LabelRender {
   constructor(g) {
