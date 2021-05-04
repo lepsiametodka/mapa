@@ -29,35 +29,6 @@ const zoom = d3.zoom()
 
 svg.call(zoom)
 
-
-const drawFloorPlan = (data) => {
-	g.selectAll(".floorplan")
-		.data(data)
-		.enter()
-		.append("rect")
-		.attr("x", d => d[0][0])
-		.attr("y", d => d[0][1])
-		.attr("width", d => d[1][0])
-		.attr("height", d => d[1][1])
-		.style("stroke", "hsl(0deg, 0%, 75%)")
-		.style("fill", "hsl(0deg, 0%, 95%)")
-		.style("stroke-width", "2px")
-
-	g.selectAll('.streets')
-		.data(DATA.streets)
-		.enter()
-		.append("text")
-		.attr("class", "streets")
-		.attr("dx", d => d.x)
-		.attr("dy", d => d.y)
-		.attr("text-anchor", "middle")
-		.attr("dominant-baseline", "middle")
-		.text(d => d.name)
-		.style("font-family", "Roboto")
-		.style("fill", "hsl(0, 0%, 70%)")
-		.style("font-size", "48px")
-}
-
 const fillForType = type => {
 	if (type === "class") {
 		return "#d5b8ff"
@@ -85,6 +56,7 @@ const fillForType = type => {
 
 let searchInstance
 const uiInstance = new UniversalUI()
+const mapRender = new MapRender(g)
 
 d3.json("data/places.json")
 	.then((places) => {
@@ -94,7 +66,8 @@ d3.json("data/places.json")
 		d3.json("data/geometry.json")
 			.then((data) => {
 				DATA = data
-				drawFloorPlan(data.floorplan)
+				mapRender.dataLoaded(data)
+
 				resetZoom()
 				initialRender()
 			})
@@ -156,14 +129,4 @@ document.getElementById("floor-down").addEventListener("click", () => {
 	FLOOR_NUMBER -= 1
 	renderFloor(FLOOR_NUMBER)
 	setPathAfterFloorChange()
-})
-
-
-document.getElementById("js-hamburger").addEventListener("click", () => {
-	document.getElementById("sidebar-md-normal").classList.toggle("hidden")
-})
-
-document.getElementById("js-detail-close").addEventListener("click", () => {
-	document.getElementById("sidebar-md-detail").classList.add("hidden")
-	resetZoom()
 })

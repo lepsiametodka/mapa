@@ -1,5 +1,5 @@
 import MobileUI from './mobile'
-import SidebarUI from '../sidebar'
+import SidebarUI from './computer'
 
 export default class UniversalUI {
   constructor() {
