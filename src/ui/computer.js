@@ -1,4 +1,5 @@
-var Mustache = require('mustache');
+import Mustache from 'mustache'
+import {showOnMap} from '../utils'
 
 export default class SidebarUI {
   constructor() {
@@ -21,6 +22,7 @@ export default class SidebarUI {
     }
 
     this.showNormal()
+    router.setFloorURL(mapInstance.currentFloor)
     this.state = null
     this.data = null
   }
@@ -55,6 +57,7 @@ export default class SidebarUI {
     document.querySelectorAll(".js-detail-show-on-map").forEach(el => {
       el.addEventListener('click', () => {
         showOnMap(roomId)
+        resetZoom()
       })
     })
   }

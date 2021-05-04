@@ -1,6 +1,4 @@
 const renderFloor = (number) => {
-	const floor = DATA.floors["" + number]
-
 	if (window.location.search.indexOf("debug") !== -1) {
 		drawDebugPaths(number)
 	}
@@ -8,5 +6,5 @@ const renderFloor = (number) => {
 		drawCurrentPath(number)
 	}
 
-	mapRender.renderFloor(number)
+	mapInstance.renderFloor(number)
 }

@@ -1,3 +1,14 @@
+const COLORMAP = {
+	"class": "#d5b8ff",
+	"office": "hsl(112, 50%, 66%)",
+	"unknown": "#aaa",
+	"services": "#ffff7e",
+	"wcm": "hsl(191, 61%, 69%)",
+	"wcw": "#ec644b",
+	"gym": "#a2ded0",
+	"default": "white"
+}
+
 export default class RoomRender {
   constructor(g) {
     this.g = g
@@ -17,7 +28,7 @@ export default class RoomRender {
       .attr("width", d => d.points[2] - d.points[0])
       .attr("height", d => d.points[3] - d.points[1])
       .attr("id", d => (d.hasOwnProperty("id") ? d.id.replace(".", "_") : ""))
-      .style("fill", d => fillForType(d.type))
+      .style("fill", d => d.type in COLORMAP ? COLORMAP[d.type] : COLORMAP.default)
       .style("stroke", "black")
       .attr("transform-origin", d => ((d.points[2] + d.points[0]) / 2) + "px " + ((d.points[3] + d.points[1]) / 2) + "px")
       .style("stroke-width", "1px")

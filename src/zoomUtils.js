@@ -10,15 +10,7 @@ export function zoomOnRoom(roomId) {
 	const roomCenterX = roomX + roomWidth / 2
 	const roomCenterY = roomY + roomHeight / 2
 
-  // Budeme zoomovat tak, aby sa miestnost zmestila cela na obrazovku.
-  let scale
-  if (roomWidth < roomHeight) {
-    scale = (mapBBox.width) / roomWidth
-  } else {
-  	scale = (mapBBox.height) / roomHeight
-	}
-  scale *= 0.5
-
+	const scale = 1.2
   const t = d3.zoomIdentity.scale(scale).translate(-roomCenterX + mapBBox.width / scale / 2, -roomCenterY + mapBBox.height / scale / 2)
 	svg.call(zoom.transform, t)
 }

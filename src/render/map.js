@@ -13,6 +13,8 @@ export default class MapRender {
     this.stairs = new StairsRender(g)
     this.shapes = new ShapesRender(g)
     this.entrances = new EntrancesRender(g)
+
+    this.currentFloor = null
   }
 
   dataLoaded(data) {
@@ -21,6 +23,7 @@ export default class MapRender {
   }
 
   renderFloor(number) {
+    this.currentFloor = number
     const floorData = this.data.floors[number + ""]
     this.entrances.render(floorData)
     this.shapes.render(floorData)

@@ -1,4 +1,5 @@
 import Mustache from 'mustache'
+import {showOnMap} from '../utils'
 
 export default class MobileUI {
   constructor() {
@@ -15,6 +16,7 @@ export default class MobileUI {
 
   hideBottom() {
     document.getElementById("js-bottom-room").style.display = "none"
+    router.setFloorURL(mapInstance.currentFloor)
     // TODO: Clean map selection
   }
 
@@ -40,6 +42,7 @@ export default class MobileUI {
       el.addEventListener('click', () => {
         document.getElementById('fullscreen-dialog').style.display = 'none'
         showOnMap(this.room)
+        resetZoom()
       })
     })
   }

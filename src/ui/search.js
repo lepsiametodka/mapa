@@ -1,41 +1,9 @@
-const showOnMap = (id) => {
-  const place = PLACES[id]
-  FLOOR_NUMBER = parseInt(place.floor)
-  renderFloor(FLOOR_NUMBER)
-  resetZoom()
+import {uiInstance} from '../app'
+import {constants} from '../constants'
+import {showOnMap} from '../utils'
+import {zoomOnRoom} from '../zoomUtils'
 
-  const ID = id.replace(".", "_")
-  g.select("#" + ID)
-    .transition()
-    .duration(100)
-    .delay(250)
-    .style("stroke", "red")
-    .attr("transform", "scale(2)")
-
-  g.select("#" + ID)
-    .transition().delay(500).duration(100)
-    .attr("transform", "")
-    .style("stroke-width", "2px")
-
-  g.selectAll(".rooms").sort((a, b) => (a.id === id ? 1 : -1))
-}
-
-const CONSTANTS = {
-  "sideNames": {
-    "M": "Metodova",
-    "J": "Jelačičova",
-    "T": "telocvična na dvore"
-  },
-  "floorNames": {
-    "-1": "suterén",
-    "0": "prízemie",
-    "1": "1. poschodie",
-    "2": "2. poschodie",
-    "3": "3. poschodie"
-  }
-}
-
-class SearchUI {
+export default class SearchUI {
   constructor() {
     document.querySelectorAll(".js-search")
       .forEach(el => el.addEventListener("keyup", evt => this.handleSearch(evt)))
@@ -79,6 +47,7 @@ class SearchUI {
     document.getElementById("sidebar-md-normal").classList.add("hidden")
 
     showOnMap(event.target.dataset.id)
+    zoomOnRoom(event.target.dataset.id)
     window.location.hash = "room/" + event.target.dataset.id
     document.getElementById("results-empty").style.display = ""
 
@@ -96,7 +65,7 @@ class SearchUI {
       let resultsHTML = ""
       for (let result of results.slice(0, 5)){
         result = result.item
-        const prettyLoc = CONSTANTS.floorNames[result.floor] + ", " + CONSTANTS.sideNames[result.side]
+        const prettyLoc = constants.floorNames[result.floor] + ", " + constants.sideNames[result.side]
 
         let other = ""
         if ("other_names" in result) {
