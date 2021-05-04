@@ -8,8 +8,8 @@ const svg = d3.select("#map")
 
 svg.append("svg:defs").append("svg:marker")
     .attr("id", "arrow")
-    .attr('refX', 2)//so that it comes towards the center.
-    .attr('refY', 3)//so that it comes towards the center.
+    .attr('refX', 2)
+    .attr('refY', 3)
     .attr("markerWidth", 4)
     .attr("markerHeight", 6)
     .attr("orient", "auto")
@@ -83,25 +83,13 @@ const fillForType = type => {
 	return "white"
 }
 
-const resetZoom = () => {
-	const mapBBox = document.getElementById("map").getBoundingClientRect()
-
-	let size
-	let diffY = IS_MOBILE ? -70 : 0
-	if (mapBBox.width < mapBBox.height) {
-		size = (mapBBox.width - 100) / DATA.dimensions.width
-	} else {
-		size = (mapBBox.height - 200) / (DATA.dimensions.height + 160)
-	}
-
-	const t = d3.zoomIdentity.translate((mapBBox.width - DATA.dimensions.width * size) / 2, (mapBBox.height - DATA.dimensions.height * size) / 2).scale(size)
-	svg.call(zoom.transform, t)
-}
+let searchInstance
+const uiInstance = new UniversalUI()
 
 d3.json("data/places.json")
 	.then((places) => {
 		PLACES = places
-		setupFuse()
+		searchInstance = new SearchUI()
 
 		d3.json("data/geometry.json")
 			.then((data) => {
@@ -126,6 +114,7 @@ const initialRender = () => {
 			break
 		case "room":
 			showOnMap(parts[1])
+			uiInstance.showRoom(parts[1])
 			break
 		case "route":
 			if (parts.length === 3) {
