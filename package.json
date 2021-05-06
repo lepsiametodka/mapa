@@ -22,8 +22,10 @@
   "homepage": "https://gitlab.com/lepsiametodka/mapa#readme",
   "description": "",
   "dependencies": {
+    "array-move": "^3.0.1",
     "fuse.js": "^6.4.6",
     "js-priority-queue": "^0.1.5",
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "sortablejs": "^1.13.0"
   }
 }

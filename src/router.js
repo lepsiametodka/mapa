@@ -13,6 +13,7 @@ export default class Router {
     }
 
     const parts = window.location.hash.substr(1).split("/")
+    this.raw_data = parts
     switch (parts[0]) {
       case "map":
         this.mode = 'map'
@@ -25,12 +26,12 @@ export default class Router {
         break
       case "route":
         this.mode = 'route'
-        if (parts.length === 3) {
-          map.renderFloor(parseInt(parts[2]))
-        }
+        map.renderFloor(parseInt(parts[2]))
+
         let pathPoints = parts[1].split(":")
-        navigationManager.renderPathBetween(pathPoints[0], pathPoints[1])
-        // TODO: floor as third parameter
+        navigationManager.currentPathPoints = pathPoints
+        navigationManager.renderPath(false)
+        uiInstance.showNavigation()
         break
       default:
         map.renderFloor(0)
@@ -47,11 +48,16 @@ export default class Router {
     this.mode = 'map'
   }
 
+  setRouteUrl(points, floor) {
+    this.mode = 'route'
+    window.location.hash = 'route/' + points.join(':') + '/' + floor
+  }
+
   updateFloorNumber(floorNumber) {
     if (this.mode === 'map') {
       this.setFloorURL(floorNumber)
     } else if (this.mode === 'route') {
-      // TODO: Route router mode
+      window.location.hash = 'route/' + navigationManager.currentPathPoints.join(':') + '/' + floorNumber
     }
   }
 

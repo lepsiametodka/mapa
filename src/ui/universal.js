@@ -2,12 +2,14 @@ import MobileUI from './mobile'
 import SidebarUI from './computer'
 import {map, PLACES, router} from '../app'
 import {constants} from '../constants'
+import NavigationUI from './navigation'
 
 export default class UniversalUI {
   constructor() {
     this.is_mobile = window.matchMedia('only screen and (max-width: 768px)').matches
     this.mobile = new MobileUI()
     this.computer = new SidebarUI()
+    this.navigation = new NavigationUI()
 
     document.getElementById("floor-up").addEventListener("click", () => this.handleFloorChange(1))
     document.getElementById("floor-down").addEventListener("click", () => this.handleFloorChange(-1))
@@ -38,6 +40,13 @@ export default class UniversalUI {
       this.mobile.showRoom(roomId, context)
     } else {
       this.computer.showRoomDetail(roomId, context)
+    }
+  }
+
+  showNavigation() {
+    if (this.is_mobile) {
+    } else {
+      this.computer.showNavigation()
     }
   }
 }

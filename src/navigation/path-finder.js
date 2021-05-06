@@ -1,5 +1,7 @@
 const PriorityQueue = require("js-priority-queue")
 
+const TELOCVICNE = ['m.tv5', 'm.tv6', 'j.tv4', 'j.tv3']
+
 export default class PathFinder {
   constructor() {
     this.data = null
@@ -62,7 +64,7 @@ export default class PathFinder {
     })
   }
 
-  runFinder(from, to) {
+  runFinder(from, to, avoidTv) {
     let distances = {}
     let previous = {}
     let visited = []
@@ -93,6 +95,10 @@ export default class PathFinder {
         break
       }
 
+      if (avoidTv && this.points[node].type === "room" && TELOCVICNE.indexOf(this.points[node].room) !== -1) {
+        continue
+      }
+
       this.graph[node].forEach(neighbor => {
         const distanceToNeigh = Math.sqrt(Math.pow(this.points[node].x - this.points[neighbor].x, 2) + Math.pow(this.points[node].y - this.points[neighbor].y, 2))
         const newDist = distances[node] + distanceToNeigh
@@ -118,11 +124,11 @@ export default class PathFinder {
     }
   }
 
-  findPathBetween(roomFrom, roomTo) {
+  findPathBetween(roomFrom, roomTo, avoidTv) {
     let best = null
 
     this.rooms[roomFrom].forEach(point => {
-      const path = this.runFinder(point, this.rooms[roomTo])
+      const path = this.runFinder(point, this.rooms[roomTo], avoidTv)
       if (best === null || best.distance > path.distance) {
         best = path
       }

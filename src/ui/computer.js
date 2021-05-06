@@ -1,7 +1,8 @@
 import Mustache from 'mustache'
 import {showOnMap} from '../utils'
-import {map, router} from '../app'
+import {map, router, uiInstance} from '../app'
 import {resetZoom} from '../zoomUtils'
+import {navigationManager} from '../app'
 
 export default class SidebarUI {
   constructor() {
@@ -12,6 +13,12 @@ export default class SidebarUI {
 
     document.getElementById('js-sidebar-detail-close')
       .addEventListener('click', evt => this.closeSidebar())
+
+    document.getElementById('js-sidebar-tab-nav')
+      .addEventListener('click', evt => this.showNavigation())
+
+    document.getElementById('js-sidebar-tab-search')
+      .addEventListener('click', evt => this.showSearch())
   }
 
   // Closes sidebar and cleans map selection.
@@ -24,7 +31,9 @@ export default class SidebarUI {
     }
 
     this.showNormal()
-    router.setFloorURL(map.currentFloor)
+    if (router.mode !== "route") {
+      router.setFloorURL(map.currentFloor)
+    }
     this.state = null
     this.data = null
   }
@@ -62,5 +71,31 @@ export default class SidebarUI {
         resetZoom()
       })
     })
+
+    document.querySelectorAll(".js-detail-navigate").forEach(el => {
+      el.addEventListener('click', () => {
+        if (navigationManager.currentPathPoints.indexOf(roomId) === -1) {
+          navigationManager.currentPathPoints.push(roomId)
+          navigationManager.reset()
+        }
+        uiInstance.showNavigation()
+      })
+    })
+  }
+
+  showNavigation() {
+    document.getElementById("sidebar-panel-search").style.display = "none"
+    document.getElementById("sidebar-panel-navigation").style.display = ""
+    document.getElementById("js-sidebar-tab-search").classList.remove("text-white", "bg-red-600")
+    document.getElementById("js-sidebar-tab-nav").classList.add("text-white", "bg-red-600")
+    uiInstance.navigation.renderCurrentRoute("sidebar-panel-navigation")
+    this.closeSidebar()
+  }
+
+  showSearch() {
+    document.getElementById("sidebar-panel-search").style.display = ""
+    document.getElementById("sidebar-panel-navigation").style.display = "none"
+    document.getElementById("js-sidebar-tab-search").classList.add("text-white", "bg-red-600")
+    document.getElementById("js-sidebar-tab-nav").classList.remove("text-white", "bg-red-600")
   }
 }

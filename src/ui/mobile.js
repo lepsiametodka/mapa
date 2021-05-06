@@ -18,7 +18,9 @@ export default class MobileUI {
 
   hideBottom() {
     document.getElementById("js-bottom-room").style.display = "none"
-    router.setFloorURL(map.currentFloor)
+    if (router.mode !== "route") {
+      router.setFloorURL(map.currentFloor)
+    }
     // TODO: Clean map selection
   }
 
