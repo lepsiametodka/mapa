@@ -1,6 +1,6 @@
 import MobileUI from './mobile'
 import SidebarUI from './computer'
-import {mapInstance, PLACES, router} from '../app'
+import {map, PLACES, router} from '../app'
 import {constants} from '../constants'
 
 export default class UniversalUI {
@@ -14,12 +14,12 @@ export default class UniversalUI {
   }
 
   handleFloorChange(diff) {
-    const newNumber = diff + mapInstance.currentFloor
+    const newNumber = diff + map.currentFloor
     if (newNumber < -1 || newNumber > 3) {
       return
     }
 
-    mapInstance.renderFloor(newNumber)
+    map.renderFloor(newNumber)
     router.updateFloorNumber(newNumber)
   }
 

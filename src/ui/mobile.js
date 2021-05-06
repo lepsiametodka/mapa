@@ -1,6 +1,6 @@
 import Mustache from 'mustache'
 import {showOnMap} from '../utils'
-import {mapInstance, router} from '../app'
+import {map, router} from '../app'
 import {resetZoom} from '../zoomUtils'
 
 export default class MobileUI {
@@ -18,7 +18,7 @@ export default class MobileUI {
 
   hideBottom() {
     document.getElementById("js-bottom-room").style.display = "none"
-    router.setFloorURL(mapInstance.currentFloor)
+    router.setFloorURL(map.currentFloor)
     // TODO: Clean map selection
   }
 

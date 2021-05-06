@@ -3,6 +3,7 @@ import {resetZoom} from './zoomUtils'
 import MapRender from './render/map'
 import SearchUI from './ui/search'
 import Router from './router'
+import NavigationManager from './navigation/manager'
 
 
 const svg = d3.select("#map")
@@ -27,9 +28,10 @@ const zoom = d3.zoom()
 
 svg.call(zoom)
 
-export const mapInstance = new MapRender(g)
+export const map = new MapRender(g)
 export const uiInstance = new UniversalUI()
 export const router = new Router()
+export const navigationManager = new NavigationManager()
 const searchInstance = new SearchUI()
 
 export let DATA = {}
@@ -43,13 +45,19 @@ d3.json("data/places.json")
 		d3.json("data/geometry.json")
 			.then((data) => {
 				DATA = data
-				mapInstance.dataLoaded(data)
+				map.dataLoaded(data)
 
-				resetZoom()
-				router.loadStateFromURL()
+				navigationManager.pathFinder.prepare().then(() => {
+					resetZoom()
+					router.loadStateFromURL()
+				})
 			})
 	})
 
+
+// TODO: Stop exporting theese
 window.g = g
 window.zoom = zoom
 window.svg = svg
+window.map = map
+window.navigationManager = navigationManager

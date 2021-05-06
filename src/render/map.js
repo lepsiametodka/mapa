@@ -4,9 +4,11 @@ import RoomRender from './rooms'
 import StairsRender from './stairs'
 import ShapesRender from './shapes'
 import EntrancesRender from './entrances'
+import {navigationManager} from '../app'
 
 export default class MapRender {
   constructor(g) {
+    this.g = g
     this.backdrop = new BackdropRender(g)
     this.labels = new LabelRender(g)
     this.rooms = new RoomRender(g)
@@ -30,13 +32,7 @@ export default class MapRender {
     this.stairs.render(floorData)
     this.rooms.render(floorData)
     this.labels.renderLabels(floorData)
-
-    // if (window.location.search.indexOf("debug") !== -1) {
-    // 	drawDebugPaths(number)
-    // }
-    // if (CURRENT_PATH !== null) {
-    // 	drawCurrentPath(number)
-    // }
+    navigationManager.floorChanged(number)
 
 
 	  document.getElementById("floor-number").innerText = number

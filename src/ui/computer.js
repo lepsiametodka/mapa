@@ -1,6 +1,6 @@
 import Mustache from 'mustache'
 import {showOnMap} from '../utils'
-import {mapInstance, router} from '../app'
+import {map, router} from '../app'
 import {resetZoom} from '../zoomUtils'
 
 export default class SidebarUI {
@@ -24,7 +24,7 @@ export default class SidebarUI {
     }
 
     this.showNormal()
-    router.setFloorURL(mapInstance.currentFloor)
+    router.setFloorURL(map.currentFloor)
     this.state = null
     this.data = null
   }
