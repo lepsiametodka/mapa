@@ -1,4 +1,4 @@
-const PriorityQueue = require("js-priority-queue")
+import PriorityQueue from 'priorityqueuejs'
 
 const TELOCVICNE = ['m.tv5', 'm.tv6', 'j.tv4', 'j.tv3']
 
@@ -68,7 +68,7 @@ export default class PathFinder {
     let distances = {}
     let previous = {}
     let visited = []
-    let queue = new PriorityQueue({ comparator: function(a, b) { return distances[a] - distances[b] }})
+    let queue = new PriorityQueue(function(a, b) { return distances[a] - distances[b] })
 
     if (!Array.isArray(to)) {
       to = [to]
@@ -80,11 +80,11 @@ export default class PathFinder {
     })
 
     distances[from] = 0
-    queue.queue(from)
+    queue.enq(from)
     let foundFinish = null
 
-    while (queue.length) {
-      let node = queue.dequeue()
+    while (queue.size()) {
+      let node = queue.deq()
       if (visited.indexOf(node) !== -1) {
         continue
       }
@@ -105,7 +105,7 @@ export default class PathFinder {
         if (distances[neighbor] === -1 || newDist < distances[neighbor]) {
           distances[neighbor] = newDist
           previous[neighbor] = node
-          queue.queue(neighbor)
+          queue.enq(neighbor)
         }
       })
     }
