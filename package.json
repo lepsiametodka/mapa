@@ -1,0 +1,31 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.2",
+    "parcel": "^2.0.0-beta.2",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "scripts": {
+    "build-css": "cross-env NODE_ENV=production postcss src/app.css -o public/assets/app.min.css",
+    "dev-css": "postcss src/app.css -o public/assets/app.min.css",
+    "dev-js": "parcel watch src/app.js --dist-dir ./public/assets",
+    "build-js": "cross-env NODE_ENV=production parcel build src/app.js --dist-dir ./public/assets"
+  },
+  "name": "map",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://gitlab.com/lepsiametodka/mapa#readme",
+  "description": "",
+  "dependencies": {
+    "array-move": "^3.0.1",
+    "fuse.js": "^6.4.6",
+    "js-priority-queue": "^0.1.5",
+    "mustache": "^4.2.0",
+    "sortablejs": "^1.13.0"
+  }
+}

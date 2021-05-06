@@ -6,50 +6,212 @@
 	<title>Mapa Metodky</title>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/app.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/app.min.css">
 </head>
-<body>
-	<div id="map"></div>
+<body class="antialiased overflow-hidden w-screen h-screen flex flex-col md:flex-row">
+	<div class="flex flex-col md:hidden w-full fixed top-0 left-0 right-0 p-4 gap-y-4">
+		<div class="flex gap-x-2 justify-center items-center">
+			<input type="text" class="bg-white px-5 py-3 w-full rounded-full shadow focus:border-black focus:ring js-search" placeholder="Nájsť miestnosť..." autocomplete="off">
 
-	<div class="search">
-		<input type="text" id="searchbar" placeholder="Vyhľadávanie" autocomplete="off">
-
-		<div class="search-results" id="results" style="display: none;">
+			<div class="bg-white p-3 rounded-full shadow bg-red-600 text-white" id="js-mobile-nav">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+			</div>
 		</div>
+
+		<div class="bg-white p-3 w-full rounded-md shadow js-search-results hidden z-10"></div>
 	</div>
 
-	<div class="floor-controls">
-		<div class="floor-btn" id="floor-up">+</div>
-		<div class="floor-label">Poschodie</div>
-		<div class="floor-number" id="floor-number">0</div>
-		<div class="floor-btn" id="floor-down">-</div>
+	<div class="bg-white h-full w-full md:w-1/5 shadow-lg z-10 hidden md:flex flex-shrink-0 flex-col border-r" id="sidebar-md-normal">
+		<div class="w-full flex border-b text-center font-bold">
+			<div class="cursor-pointer flex-grow p-4 text-white bg-red-600" id="js-sidebar-tab-search">Vyhľadávanie</div>
+			<div class="cursor-pointer flex-grow p-4" id="js-sidebar-tab-nav">Navigácia</div>
+		</div>
+
+		<div class="flex flex-col flex-grow" id="sidebar-panel-search">
+			<div class="flex-grow p-4">
+				<input type="text" class="js-search block py-2 px-4 rounded-md border w-full focus:border-black focus:ring" placeholder="Názov, číslo, označenie miestnosti..." autocomplete="off">
+
+				<div class="mt-6 flex flex-col gap-y-4 js-search-results hidden"></div>
+				<div id="results-empty" class="mt-12 text-gray-500 text-center flex flex-col items-center">
+					<div class="text-white bg-gray-400 p-3 rounded-full mb-3">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-frown"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+					</div>
+					<div class="text-xl">Nič tu nie je.</div>
+					<div class="mt-1 text-sm">
+						Skús vyhľadať názov alebo číslo miestnosti.
+					</div>
+				</div>
+			</div>
+
+			<a href="https://lepsiametodka.sk" class="flex flex-col items-center justify-center pb-8 mt-6">
+				<img src="https://lepsiametodka.sk/static/images/logo.png" alt="Lepšia Metodka" class="h-10">
+				<span class="text-gray-500 text-xs mt-2">&copy; Lepšia Metodka 2021</span>
+			</a>
+		</div>
+
+		<div class="flex flex-col flex-grow p-4" id="sidebar-panel-navigation" style="display: none"></div>
+	</div>
+
+	<div class="bg-white h-full w-1/5 shadow-lg flex flex-shrink-0 flex-col border-r z-10" id="sidebar-md-detail" style="display: none">
+		<div class="w-full flex border-b text-center font-bold p-4 items-center">
+			<div class="ml-1" id="sidebar-detail-title">Detail miestnosti</div>
+			<div class="ml-auto text-gray-700 cursor-pointer hover:bg-gray-200 p-1 rounded-full" id="js-sidebar-detail-close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+			</div>
+		</div>
+
+		<div id="sidebar-detail-body" class="flex-grow"></div>
+	</div>
+
+	<svg id="map" class="flex-grow w-full h-full"></svg>
+
+	<div class="fixed flex flex-col left-0 bottom-0 right-0">
+		<div class="p-4 md:p-6 flex gap-x-2 justify-end w-full">
+			<div class="bg-white p-3 rounded-full shadow cursor-pointer hover:bg-gray-200" id="floor-up">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+			</div>
+
+			<div class="bg-white px-5 py-3 rounded-full shadow flex items-center gap-x-1.5">
+				<span class="text-xs">Poschodie</span>
+				<span id="floor-number" class="font-bold">??</span>
+			</div>
+
+			<div class="bg-white p-3 rounded-full shadow cursor-pointer hover:bg-gray-200" id="floor-down">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+			</div>
+		</div>
+
+		<div class="md:hidden p-6 bg-white border-t shadow rounded-t-lg" style="display: none" id="js-bottom-room"></div>
+	</div>
+
+	<div id="fullscreen-dialog" class="fixed bg-white top-0 left-0 bottom-0 right-0 z-20" style="display: none">
+		<div class="p-4">
+			<svg id="fullscreen-dialog-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x ml-auto"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+		</div>
+		<div id="fullscreen-dialog-body"></div>
 	</div>
 
 	<script src="assets/d3.min.js"></script>
-	<script src="assets/fuse.min.js"></script>
-	<script src="assets/search.js"></script>
-	<script src="assets/labels.js"></script>
-	<script src="assets/floor.js"></script>
-	<script src="assets/main.js"></script>
+	<script src="assets/app.js"></script>
 
 	<script src="upup.min.js"></script>
 	<script>
 		UpUp.start({
-			'cache-version': 'v1.2',
+			'cache-version': 'v2.0',
 			'content-url': 'index.html',
 			'assets': [
 				'assets/app.css',
 				'assets/d3.min.js',
-				'assets/fuse.min.js',
-				'assets/search.js',
-				'assets/labels.js',
-				'assets/floor.js',
-				'assets/main.js',
 				'data/geometry.json',
 				'data/places.json',
+				'data/paths.json',
 			],
 		})
+	</script>
+
+	<script id="templ-bottom-room" type="text/html">
+		<div class="flex justify-between items-center">
+			<div class="text-xl font-bold">{{room.primary_name}}</div>
+			<div class="flex items-center gap-2">
+				{{#room.number}}
+				<div class="text-gray-600">č. {{room.number}}</div>
+				{{/room.number}}
+
+				<svg id="js-bottom-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+			</div>
+		</div>
+		<div>{{pretty_floor}}, {{pretty_side}}</div>
+	</script>
+
+	<script id="templ-sidebar-room" type="text/html">
+		<div class="w-full bg-red-600 text-white text-center py-10 px-4">
+			<h2 class="font-light text-3xl">{{room.primary_name}}</h2>
+		</div>
+
+		<div class="px-4 py-6 grid grid-cols-2 gap-2">
+			<div class="text-red-600 hover:text-red-800 cursor-pointer flex flex-col items-center js-detail-show-on-map">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+				<span class="mt-2">Zobraziť na mape</span>
+			</div>
+			{{#has_navigation}}
+			<div class="text-red-600 hover:text-red-800 cursor-pointer flex flex-col items-center js-detail-navigate">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+				<span class="mt-2">Navigovať</span>
+			</div>
+			{{/has_navigation}}
+			{{^has_navigation}}
+			<div class="text-gray-600 flex items-center text-center text-sm">
+				Bohužiaľ, k tejto miestnosti zatiaľ nevieme navigovať.
+			</div>
+			{{/has_navigation}}
+		</div>
+
+		<div class="px-6 py-4 h-full">
+			<div>
+				Budova: <b>{{pretty_side}}</b>
+			</div>
+			<div class="mt-1">
+				Poschodie: <b>{{pretty_floor}}</b>
+			</div>
+			{{#other_names}}
+			<div class="mt-1">
+				Poschodie: <b>{{other_names}}</b>
+			</div>
+			{{/other_names}}
+			{{#room.number}}
+			<div class="mt-1">
+				Číslo dverí: <b>{{room.number}}</b>
+			</div>
+			{{/room.number}}
+		</div>
+	</script>
+
+	<script id="templ-navigation" type="text/html">
+		<div class="p-4">
+			<h2 class="text-gray-500 font-bold tracking-wide uppercase text-sm">Trasa</h2>
+
+			<div class="mt-2 flex flex-col gap-y-2" id="js-waypoints">
+				{{#waypoints}}
+				<div class="rounded-md border py-2 px-4 flex items-center cursor-move" data-id="{{id}}">
+					<div>
+						<div class="font-bold">{{name}}</div>
+						<div class="text-sm text-gray-600">{{floor}}, {{side}}</div>
+					</div>
+
+					<div class="ml-auto js-nav-remove cursor-pointer" data-id="{{id}}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-4 h-4 pointer-events-none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+					</div>
+				</div>
+				{{/waypoints}}
+				{{^waypoints}}
+				<div class="rounded-md border py-2 px-4 flex items-center" data-id="{{id}}">
+					<div>
+						<div class="text-gray-800">Zatiaľ si nepridal žiadnu miesnosť</div>
+						<div class="text-sm text-gray-600">Vráť sa do vyhľadávania a pridaj prvú miestnosť</div>
+					</div>
+				</div>
+				{{/waypoints}}
+			</div>
+
+			<div class="text-gray-600 text-xs mt-2">Poradie miesností sa dá zmeniť potiahnutím.</div>
+
+			<div class="mt-4">
+				<div class="flex items-center">
+					<input type="checkbox" id="tv-check" {{#avoidTv}}checked{{/avoidTv}}>
+					<div class="ml-4">
+						<label for="tv-check" class="font-bold text-sm text-gray-700">Vyhnúť sa prechodu cez telocvičňu</label>
+						<div class="text-xs text-gray-500">
+							Na prechod telocvičnou potrebuješ prezuvky
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-6">
+				<a href="#" class="rounded-md bg-red-600 text-white font-bold py-2 px-4 shadow js-nav-run">Nájsť trasu</a>
+			</div>
+		</div>
 	</script>
 </body>
 </html>
