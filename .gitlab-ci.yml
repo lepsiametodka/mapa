@@ -1,11 +1,13 @@
-image: alpine:latest
+image: node:lts-alpine
 
 pages:
   stage: deploy
   only:
     - master
   script:
-    - echo 'Nothing to do...'
+    - npm install
+    - npm run build-css
+    - npm run build-js
   artifacts:
     paths:
       - public
