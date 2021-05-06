@@ -34,6 +34,7 @@ export default class UniversalUI {
       "other_names": ("other_names" in room) ? room.other_names.join(", ") : "",
       "pretty_side": constants.sideNames[room.side],
       "pretty_floor": constants.floorNames[room.floor],
+      "has_navigation": roomId in navigationManager.pathFinder.rooms,
     }
 
     if (this.is_mobile) {

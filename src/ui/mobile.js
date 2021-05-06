@@ -1,11 +1,12 @@
 import Mustache from 'mustache'
 import {showOnMap} from '../utils'
-import {map, router} from '../app'
+import {map, router, uiInstance} from '../app'
 import {resetZoom} from '../zoomUtils'
 
 export default class MobileUI {
   constructor() {
     document.getElementById("js-bottom-room").addEventListener('click', evt => this.expandDetails())
+    document.getElementById("js-mobile-nav").addEventListener('click', evt => this.showNavigation())
 
     document.getElementById('fullscreen-dialog-close').addEventListener('click', () => {
       document.getElementById('fullscreen-dialog').style.display = 'none'
@@ -49,5 +50,22 @@ export default class MobileUI {
         resetZoom()
       })
     })
+
+    // Navigate button
+    document.querySelectorAll(".js-detail-navigate").forEach(el => {
+      el.addEventListener('click', () => {
+        if (navigationManager.currentPathPoints.indexOf(this.room) === -1) {
+          navigationManager.currentPathPoints.push(this.room)
+          navigationManager.reset()
+        }
+        this.showNavigation()
+      })
+    })
+  }
+
+  showNavigation() {
+    document.getElementById('fullscreen-dialog').style.display = ''
+    uiInstance.navigation.renderCurrentRoute('fullscreen-dialog-body')
+    this.hideBottom()
   }
 }

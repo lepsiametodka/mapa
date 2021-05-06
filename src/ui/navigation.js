@@ -53,6 +53,7 @@ export default class NavigationUI {
         if (success) {
           showOnMap(navigationManager.currentPathPoints[0])
           zoomOnRoom(navigationManager.currentPathPoints[0])
+          document.getElementById('fullscreen-dialog').style.display = 'none'
         } else {
           alert("Nepodarilo sa nám nájsť žiadnu trasu.")
         }
