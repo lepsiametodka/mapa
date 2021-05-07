@@ -68,7 +68,7 @@ export default class PathFinder {
     let distances = {}
     let previous = {}
     let visited = []
-    let queue = new PriorityQueue(function(a, b) { return distances[a] - distances[b] })
+    let queue = new PriorityQueue(function(a, b) { return distances[b] - distances[a] })
 
     if (!Array.isArray(to)) {
       to = [to]
