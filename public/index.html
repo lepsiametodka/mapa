@@ -8,6 +8,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/app.min.css">
+
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body class="antialiased overflow-hidden w-screen h-screen flex flex-col md:flex-row">
 	<div class="flex flex-col md:hidden w-full fixed top-0 left-0 right-0 p-4 gap-y-4">
@@ -171,6 +174,8 @@
 		<div class="p-4">
 			<h2 class="text-gray-500 font-bold tracking-wide uppercase text-sm">Trasa</h2>
 
+			<p class="text-sm mt-2">Táto funkcionalita je zatiaľ v štádiu testovania, funguje čiastočne na Metodovej.</p>
+
 			<div class="mt-2 flex flex-col gap-y-2" id="js-waypoints">
 				{{#waypoints}}
 				<div class="rounded-md border py-2 px-4 flex items-center cursor-move bg-white" data-id="{{id}}">
@@ -202,7 +207,7 @@
 					<div class="ml-4">
 						<label for="tv-check" class="font-bold text-sm text-gray-700">Vyhnúť sa prechodu cez telocvičňu</label>
 						<div class="text-xs text-gray-500">
-							Na prechod telocvičnou potrebuješ prezuvky
+							Na prechod telocvičnou potrebuješ papuče
 						</div>
 					</div>
 				</div>
