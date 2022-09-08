@@ -1,8 +1,8 @@
 {
 	"m.05": {
-		"primary_name": "1.A",
+		"primary_name": "2.A",
 		"number": "05",
-		"other_names": ["1a", "I.A"],
+		"other_names": ["2a", "II.A"],
 		"floor": "0",
 		"side": "M"
 	},
@@ -147,22 +147,22 @@
 		"side": "J"
 	},
 	"j.022": {
-		"primary_name": "Kvarta B",
-		"other_names": ["kva b"],
+		"primary_name": "Kvinta B",
+		"other_names": ["kvi b"],
 		"number": "022",
 		"floor": "0",
 		"side": "J"
 	},
 	"j.021": {
-		"primary_name": "Tercia A",
-		"other_names": ["ter a"],
+		"primary_name": "Kvarta A",
+		"other_names": ["kva a"],
 		"number": "021",
 		"floor": "0",
 		"side": "J"
 	},
 	"j.023": {
-		"primary_name": "Kvinta A",
-		"other_names": ["kvi a"],
+		"primary_name": "Sexta A",
+		"other_names": ["sex a"],
 		"number": "023",
 		"floor": "0",
 		"side": "J"
@@ -253,9 +253,9 @@
 		"side": "T"
 	},
 	"m.101": {
-		"primary_name": "3.B",
+		"primary_name": "4.B",
 		"number": "101",
-		"other_names": ["3b", "III.B"],
+		"other_names": ["4b", "IV.B"],
 		"floor": "1",
 		"side": "M"
 	},
@@ -431,22 +431,22 @@
 		"side": "J"
 	},
 	"j.101": {
-		"primary_name": "Kvarta A",
-		"other_names": ["kva a"],
+		"primary_name": "Kvinta A",
+		"other_names": ["kvi a"],
 		"number": "101",
 		"floor": "1",
 		"side": "J"
 	},
 	"j.102": {
-		"primary_name": "Oktáva B",
-		"other_names": ["okt b"],
+		"primary_name": "Príma B",
+		"other_names": ["pri b"],
 		"number": "102",
 		"floor": "1",
 		"side": "J"
 	},
 	"j.103": {
-		"primary_name": "Tercia B",
-		"other_names": ["ter b"],
+		"primary_name": "Kvarta B",
+		"other_names": ["kva b"],
 		"number": "103",
 		"floor": "1",
 		"side": "J"
@@ -459,22 +459,22 @@
 		"side": "J"
 	},
 	"j.106": {
-		"primary_name": "Príma A",
-		"other_names": ["pri a"],
+		"primary_name": "Sekunda A",
+		"other_names": ["sek a"],
 		"number": "106",
 		"floor": "1",
 		"side": "J"
 	},
 	"j.107": {
-		"primary_name": "Sekunda A",
-		"other_names": ["sek a"],
+		"primary_name": "Tercia A",
+		"other_names": ["ter a"],
 		"number": "107",
 		"floor": "1",
 		"side": "J"
 	},
 	"j.109": {
-		"primary_name": "Sekunda B",
-		"other_names": ["sek b"],
+		"primary_name": "Tercia B",
+		"other_names": ["ter b"],
 		"number": "109",
 		"floor": "1",
 		"side": "J"
@@ -563,22 +563,22 @@
 		"side": "J"
 	},
 	"j.211": {
-		"primary_name": "Príma B",
-		"other_names": ["pri b"],
+		"primary_name": "Sekunda B",
+		"other_names": ["sek b"],
 		"number": "211",
 		"floor": "2",
 		"side": "J"
 	},
 	"j.210": {
-		"primary_name": "Sexta A",
-		"other_names": ["sex a"],
+		"primary_name": "Príma A",
+		"other_names": ["pri a"],
 		"number": "210",
 		"floor": "2",
 		"side": "J"
 	},
 	"j.209": {
-		"primary_name": "5.BF",
-		"other_names": ["5bf", "V.BF"],
+		"primary_name": "1.BF",
+		"other_names": ["1bf", "I.BF"],
 		"number": "209",
 		"floor": "2",
 		"side": "J"
@@ -590,15 +590,15 @@
 		"side": "J"
 	},
 	"j.207": {
-		"primary_name": "3.AF",
-		"other_names": ["3af", "III.AF"],
+		"primary_name": "4.AF",
+		"other_names": ["4af", "IV.AF"],
 		"number": "207",
 		"floor": "2",
 		"side": "J"
 	},
 	"j.206": {
-		"primary_name": "3.BF",
-		"other_names": ["3bf", "III.BF"],
+		"primary_name": "4.BF",
+		"other_names": ["4bf", "IV.BF"],
 		"number": "206",
 		"floor": "2",
 		"side": "J"
@@ -629,8 +629,8 @@
 		"side": "J"
 	},
 	"j.201": {
-		"primary_name": "5.AF",
-		"other_names": ["5af", "V.AF"],
+		"primary_name": "1.AF",
+		"other_names": ["1af", "I.AF"],
 		"number": "201",
 		"floor": "2",
 		"side": "J"
@@ -677,22 +677,22 @@
 		"side": "M"
 	},
 	"m.207": {
-		"primary_name": "2.B",
-		"other_names": ["2b", "II.B"],
+		"primary_name": "3.B",
+		"other_names": ["3b", "III.B"],
 		"number": "207",
 		"floor": "2",
 		"side": "M"
 	},
 	"m.206": {
-		"primary_name": "Sexta B",
-		"other_names": ["sex b"],
+		"primary_name": "Septima B",
+		"other_names": ["sep b"],
 		"number": "206",
 		"floor": "2",
 		"side": "M"
 	},
 	"m.205": {
-		"primary_name": "Kvinta B",
-		"other_names": ["kvi b"],
+		"primary_name": "Sexta B",
+		"other_names": ["sex b"],
 		"number": "205",
 		"floor": "2",
 		"side": "M"
@@ -742,58 +742,58 @@
 		"side": "M"
 	},
 	"m.302": {
-		"primary_name": "2.C",
+		"primary_name": "3.C",
 		"number": "302",
-		"other_names": ["2c", "II.C"],
+		"other_names": ["3c", "III.C"],
 		"floor": "3",
 		"side": "M"
 	},
 	"m.303": {
-		"primary_name": "Septima B",
+		"primary_name": "Oktáva B",
 		"number": "303",
-		"other_names": ["sep b"],
+		"other_names": ["okt b"],
 		"floor": "3",
 		"side": "M"
 	},
 	"m.304": {
-		"primary_name": "Septima A",
-		"number": "304",
-		"other_names": ["sep a"],
-		"floor": "3",
-		"side": "M"
-	},
-	"m.305": {
-		"primary_name": "4.A",
-		"number": "305",
-		"other_names": ["4a", "IV.A"],
-		"floor": "3",
-		"side": "M"
-	},
-	"m.306": {
-		"primary_name": "3.A",
-		"number": "306",
-		"other_names": ["3a", "III.A"],
-		"floor": "3",
-		"side": "M"
-	},
-	"m.307": {
 		"primary_name": "Oktáva A",
-		"number": "307",
+		"number": "304",
 		"other_names": ["okt a"],
 		"floor": "3",
 		"side": "M"
 	},
+	"m.305": {
+		"primary_name": "1.A",
+		"number": "305",
+		"other_names": ["1a", "I.A"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.306": {
+		"primary_name": "4.A",
+		"number": "306",
+		"other_names": ["4a", "IV.A"],
+		"floor": "3",
+		"side": "M"
+	},
+	"m.307": {
+		"primary_name": "Septima A",
+		"number": "307",
+		"other_names": ["sep a"],
+		"floor": "3",
+		"side": "M"
+	},
 	"m.308": {
-		"primary_name": "4.B",
+		"primary_name": "1.B",
 		"number": "308",
-		"other_names": ["4b", "IV.B"],
+		"other_names": ["1b", "I.B"],
 		"floor": "3",
 		"side": "M"
 	},
 	"m.309": {
-		"primary_name": "2.A",
+		"primary_name": "3.A",
 		"number": "309",
-		"other_names": ["2a", "II.A"],
+		"other_names": ["3a", "III.A"],
 		"floor": "3",
 		"side": "M"
 	},
@@ -848,16 +848,16 @@
 		"side": "J"
 	},
 	"j.303": {
-		"primary_name": "2.AF",
+		"primary_name": "3.AF",
 		"number": "303",
-		"other_names": ["2af", "II.AF"],
+		"other_names": ["3af", "III.AF"],
 		"floor": "3",
 		"side": "J"
 	},
 	"j.304": {
-		"primary_name": "4.AF",
+		"primary_name": "5.AF",
 		"number": "304",
-		"other_names": ["4af", "IV.AF"],
+		"other_names": ["5af", "V.AF"],
 		"floor": "3",
 		"side": "J"
 	},
@@ -868,23 +868,23 @@
 		"side": "J"
 	},
 	"j.306": {
-		"primary_name": "2.BF",
+		"primary_name": "3.BF",
 		"number": "306",
-		"other_names": ["2bf", "II.BF"],
+		"other_names": ["3bf", "III.BF"],
 		"floor": "3",
 		"side": "J"
 	},
 	"j.307": {
-		"primary_name": "1.AF",
+		"primary_name": "2.AF",
 		"number": "307",
-		"other_names": ["1af", "I.AF"],
+		"other_names": ["2af", "II.AF"],
 		"floor": "3",
 		"side": "J"
 	},
 	"j.308": {
-		"primary_name": "1.BF",
+		"primary_name": "2.BF",
 		"number": "308",
-		"other_names": ["1bf", "I.BF"],
+		"other_names": ["2bf", "II.BF"],
 		"floor": "3",
 		"side": "J"
 	},
@@ -895,9 +895,9 @@
 		"side": "J"
 	},
 	"j.310": {
-		"primary_name": "4.BF",
+		"primary_name": "5.BF",
 		"number": "310",
-		"other_names": ["4bf", "IV.BF"],
+		"other_names": ["5bf", "V.BF"],
 		"floor": "3",
 		"side": "J"
 	},
