@@ -123,7 +123,7 @@
 		"side": "J"
 	},
 	"j.mJ": {
-		"primary_name": "Multimediálka",
+		"primary_name": "Interaktívna učebňa",
 		"other_names": ["mJ"],
 		"number": "016",
 		"floor": "0",
@@ -646,8 +646,8 @@
 		"side": "J"
 	},
 	"m.202": {
-		"primary_name": "1.B",
-		"other_names": ["1b", "I.B"],
+		"primary_name": "2.B",
+		"other_names": ["2b", "2.B"],
 		"number": "202",
 		"floor": "2",
 		"side": "M"
@@ -959,7 +959,8 @@
 		"side": "J"
 	},
 	"j.014": {
-		"primary_name": "Nejaká multimediálka??",
+		"primary_name": "Multimediálka",
+		"number": "014"
 		"floor": "-1",
 		"side": "J"
 	},
